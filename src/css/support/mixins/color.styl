@@ -1,0 +1,12 @@
+/**
+ * 将给定的颜色透明.
+ * 将给定的颜色的透明度与给定的透明度做减法运算,如果计算结果小于0,返回给定颜色的rgba,alpha为0,表示全透明
+ * c: 需要计算的yanse
+ * a: 透明度
+ */
+transparentize(c, a)
+    diff = alpha(c) - a
+    if diff > 0
+        rgba(c, diff)
+    else
+        rgba(c, 0)

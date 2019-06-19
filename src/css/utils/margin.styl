@@ -1,0 +1,23 @@
+// margin util
+for $breakpoint, $variant in $responsive-variants
+    +breakpoint($breakpoint)
+        for $scale, $size in $spacer-map
+            .m{$variant}-{$scale}  { margin: $size !important }
+            .mt{$variant}-{$scale} { margin-top: $size !important }
+            .mr{$variant}-{$scale} { margin-right: $size !important }
+            .mb{$variant}-{$scale} { margin-bottom: $size !important }
+            .ml{$variant}-{$scale} { margin-left: $size !important }
+            if $size != 0
+                .mt{$variant}-n{$scale} { margin-top: -($size) !important }
+                .mr{$variant}-n{$scale} { margin-right: -($size) !important }
+                .mb{$variant}-n{$scale} { margin-bottom: -($size) !important }
+                .ml{$variant}-n{$scale} { margin-left: -($size) !important }
+            .mx{$variant}-{$scale}
+                margin-left $size !important
+                margin-right $size !important
+            .my{$variant}-{$scale}
+                margin-top $size !important
+                margin-bottom $size !important
+        .mx{$variant}-auto
+            margin-left auto !important
+            margin-right auto !important

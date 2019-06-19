@@ -1,0 +1,79 @@
+/*
+ * nav元素对齐方式默认 space-between
+ * 使用.tabnav-left与.tabnav-right可以改变元素对齐方式
+ * 使用.selected或更改aria-selected=true可以使元素处于被选中的样式
+ * .nav-tab-extra不是一定需要,根据需要样式自行设置
+ */
+
+/*
+ * <nav class="nav-tabs">
+ *     <ul class="nav-body">
+ *         <li class="nav-item"></li>
+ *     </ul>
+ *
+ *     <div class="nav-tab-extra">
+ *         <p class="extra-item"></p>     普通字符串不会改变连hover时的颜色
+ *         <a class="extra-item"></a>     超链接hover时颜色会改变为蓝色,并且删除了下划线
+ *     </div>
+ * </nav>
+ */
+.nav-tabs
+    display flex
+    flex-direction row
+    align-items center
+    justify-content space-between
+    border-bottom $border-width $border-style $gray-300
+
+    .nav-body
+        display flex
+        flex-direction row
+        list-style none
+
+        .nav-item
+            padding $spacer-2 12px
+            font-size $body-font-size
+            line-height 20px
+            color $gray-600
+            text-decoration none
+            background-color transparent
+            user-select none
+            cursor pointer
+            &:hover
+            &:focus
+                color $text-gray-dark
+                text-decoration none
+            &[aria-current=true]
+            &[aria-selected=true]
+            &.selected
+                margin-bottom -1px
+                font-weight $font-weight-bold
+                color $text-gray-dark
+                background-color $bg-white
+                border $border-width $border-style $gray-300
+                border-bottom none
+                border-radius $border-radius $border-radius 0 0
+
+    // 更改整体排列方式
+    &.nav-tabs-left
+        justify-content flex-start
+    &.nav-tabs-right
+        justify-content flex-end
+
+    // 更改整体排列方式后,额外的元素添加一个向左10px的外边距
+    &.nav-tabs-left
+    &.nav-tabs-right
+        .nav-tab-extra
+            margin-left 10px
+
+    // 导航栏额外属性,如:文字描述,连接,按钮
+    .nav-tabs-extra
+        margin-left 0
+        .extra-item
+            display inline-block
+            padding-top 10px
+            margin-left 10px
+            font-size $font-size-small
+            color $gray-600
+        a.extra-item:hover
+            color $text-blue
+            text-decoration none

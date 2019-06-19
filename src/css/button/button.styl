@@ -1,0 +1,169 @@
+.btn
+    position relative
+    display inline-block
+    padding 6px 12px
+    font-size $body-font-size
+    font-weight $font-weight-normal
+    line-height 20px
+    white-space nowrap
+    vertical-align middle
+    cursor pointer
+    user-select none
+    background-repeat repeat-x
+    background-position -1px -1px
+    background-size 110% 110%
+    border 1px solid transparentize($black, 0.8)
+    border-radius .25em
+    appearance none
+    &:focus
+        outline none
+    &:hover
+        text-decoration none
+        background-repeat repeat-x
+    &:active
+    &.selected
+        background-image none
+    &:disabled
+    &.disabled
+        cursor default
+        background-position 0 0
+    i
+        font-style normal
+        font-weight $font-weight-semibold
+        opacity .75
+    .octicon
+        vertical-align text-top
+    .Counter
+        color $gray-600
+        text-shadow none
+        background-color rgba($black, 0.1)
+
+.btn
+    btn-solid($text-gray-dark, $gray-000, darken($gray-100, 2%))
+    &.btn-primary
+        btn-solid($text-white, $green-400, $green-500)
+    &.btn-blue
+        btn-solid($text-white, lighten($blue-500, 8%), darken($blue-500, 2%))
+    &.btn-purple
+        btn-solid($text-white, $green-400, $green-500)
+    &.btn-danger
+        btn-inverse($red-600, $gray-000, darken($gray-100, 2%))
+
+    &.btn-outline
+        btn-outline($text-blue)
+
+    &.btn-with-count
+        float left
+        border-top-right-radius 0
+        border-bottom-right-radius 0
+
+    &.btn-sm
+        padding 3px 10px
+        font-size $font-size-small
+        line-height 20px
+
+    &.btn-large
+        padding $em-spacer-6 1.25em
+        font-size inherit
+        border-radius 6px
+
+    &.btn-block
+        display block
+        width 100%
+        text-align center
+
+    &.btn-bold
+        font-weight $font-weight-bold
+
+.hidden-text-expander
+    display block
+    &.inline
+        position relative
+        top -1px
+        display inline-block
+        margin-left 5px
+        line-height 0
+
+.hidden-text-expander a,
+.ellipsis-expander
+    display inline-block
+    height 12px
+    padding 0 5px 5px
+    font-size $font-size-small
+    font-weight $font-weight-bold
+    line-height 6px
+    color $gray-700
+    text-decoration none
+    vertical-align middle
+    background lighten($gray-300, 5%)
+    border 0
+    border-radius 1px
+    &:hover
+        text-decoration none
+        background-color darken($gray-300, 4%)
+    &:active
+        color $text-white
+        background-color $blue-400
+
+.social-count
+    float left
+    padding 3px 10px
+    font-size $font-size-small
+    font-weight $font-weight-bold
+    line-height 20px
+    color $text-gray-dark
+    vertical-align middle
+    background-color $bg-white
+    border 1px solid transparentize($black, 0.8)
+    border-left 0
+    border-top-right-radius 3px
+    border-bottom-right-radius 3px
+    &:hover,
+    &:active
+        text-decoration none
+    &:hover
+        color $text-blue
+        cursor pointer
+
+.btn-link
+    display inline-block
+    padding 0
+    font-size inherit
+    color $text-blue
+    text-decoration none
+    white-space nowrap
+    cursor pointer
+    user-select none
+    background-color transparent
+    border 0
+    appearance none
+    &:hover
+        text-decoration underline
+    &:disabled
+        &,
+        &:hover
+            color rgba($gray-600, 0.5)
+            cursor default
+
+.btn-icon
+    padding 0
+    border none
+    background-color transparent
+    display inline-block
+    font-size inherit
+    color inherit
+    text-decoration none
+    white-space nowrap
+    user-select none
+    appearance icon
+    cursor pointer
+    &:focus
+        outline none
+    &:hover
+        text-decoration none
+    &:disabled
+        &, &:hover
+            color rgba($gray-600, 0.5)
+            cursor default
+    .octicon
+        vertical-align middle

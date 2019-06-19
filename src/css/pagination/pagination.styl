@@ -1,0 +1,65 @@
+// 分页
+
+.pagination-container
+    font-size 13px
+
+    .pagination
+        padding 0
+        margin 15px 0
+        list-style none
+        display flex
+        flex-direction row
+        align-items center
+        justify-content center
+
+        .page-item
+            padding 7px 12px
+            border $border
+            border-right none
+            font-weight $font-weight-bold
+            font-style normal
+            line-height $lh-default
+            color $text-blue
+            background-color $bg-white
+            white-space nowrap
+            user-select none
+            cursor pointer
+
+            &:focus
+            &:hover
+                outline none
+                z-index 2
+                text-decoration none
+                background-color darken($gray-100, 2%)
+                border-color $border-gray
+
+            &:first-child
+                border-top-left-radius $border-radius
+                border-bottom-left-radius $border-radius
+            &:last-child
+                border-top-right-radius $border-radius
+                border-bottom-right-radius $border-radius
+                border-right @border
+            &.disabled
+                color $gray-300
+                background-color $bg-gray-light
+                pointer-events none
+                cursor auto
+
+            &.selected
+            &.selected:hover
+            &[aria-current=true]
+            &[aria-current=true]:hover
+                z-index 3
+                color $text-white
+                background-color $bg-blue
+                border-color $border-blue
+
+        .page-gap
+        .page-gap:hover
+            padding 7px 12px
+            color $gray-300
+            background-color $bg-gray-light
+            border $border
+            border-right none
+            cursor default

@@ -1,0 +1,16 @@
+.breadcrumb-item
+    list-style none
+    display inline-block
+    margin-left -0.35em
+    white-space nowrap
+    &::after
+        padding-right $em-spacer-5
+        padding-left $em-spacer-5
+        color $border-gray
+        content "/"
+    &:first-child
+        margin-left 0
+
+.breadcrumb-item-selected
+    &::after
+        content none

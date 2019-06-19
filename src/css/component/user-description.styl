@@ -1,0 +1,19 @@
+.user-description
+    width 50%
+    background-color $gray-200
+    border-radius $border-radius
+    border $border-width $border-style $gray-300
+    .description-header
+        padding 5px 10px
+    .description-body
+        font-size $body-font-size
+        color $gray-600
+        background-color $gray-000
+        border-bottom-left-radius $border-radius
+        border-bottom-right-radius $border-radius
+        padding 20px
+        &:empty
+            text-align center
+            padding 30px 15px
+            &:before
+                content '暂时还没有个人简介'

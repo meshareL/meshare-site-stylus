@@ -1,0 +1,93 @@
+// 基础距离
+$spacer := 8px
+
+$spacer-0 := 0
+$spacer-1 := round($spacer / 2)
+$spacer-2 := $spacer
+$spacer-3 := $spacer * 2
+$spacer-4 := $spacer * 3
+$spacer-5 := $spacer * 4
+$spacer-6 := $spacer * 5
+
+$spacers := $spacer-0, $spacer-1, $spacer-2, $spacer-3, $spacer-4, $spacer-4, $spacer-6
+
+$spacer-map := {
+    '0': $spacer-0,
+    '1': $spacer-1,
+    '2': $spacer-2,
+    '3': $spacer-3,
+    '4': $spacer-4,
+    '5': $spacer-5,
+    '6': $spacer-6
+}
+
+$em-spacer-1 :=  0.0625em    // 1/16
+$em-spacer-2 :=  0.125em     // 1/8
+$em-spacer-3 :=  0.25em      // 1/4
+$em-spacer-4 :=  0.375em     // 3/8
+$em-spacer-5 :=  0.5em       // 1/2
+$em-spacer-6 :=  0.75em      // 3/4
+
+$container-width := 980px
+
+// 网格列
+// 设置列数,并指定列之间的空间宽度
+$grid-columns    := 12
+$grid-gutter     := 30px
+
+// 网格断点
+// 定义布局变化的最小维度
+// 适应不同的屏幕大小,用于媒体查询
+$width-xs := 0
+// Small screen / phone
+//$width-sm := 544px        // github
+$width-sm := 576px          // bootstrap
+// Medium screen / tablet
+//$width-md := 768px        // github
+$width-md := 768px          // bootstrap
+// Large screen / desktop (980 + (16 * 2)) <= container + gutters
+//$width-lg := 1012px       // github
+$width-lg := 992px          // bootstrap
+// Extra large screen / wide desktop
+//$width-xl := 1280px       // github
+$width-xl := 1200px         // bootstrap
+
+// grid containers
+// 对于不同屏幕大小,设置.container最大宽度
+$max-width-sm := 540px
+$max-width-md := 720px
+$max-width-lg := 960px
+$max-width-xl := 1140px
+
+$breakpoints := {
+    'sm': $width-sm,
+    'md': $width-md,
+    'lg': $width-lg,
+    'xl': $width-xl
+}
+
+$container-max-widths := {
+    '': '',
+    'sm': $max-width-sm,
+    'md': $max-width-md,
+    'lg': $max-width-lg,
+    'xl': $max-width-xl
+}
+
+$responsive-variants := {
+    '': '',
+    'sm': '-sm',
+    'md': '-md',
+    'lg': '-lg',
+    'xl': '-xl'
+}
+
+// Responsive container widths
+$container-sm := $width-sm
+$container-md := $width-md
+$container-lg := $width-lg
+$container-xl := $width-xl
+
+$min-widths := $width-sm $width-md $width-lg $width-xl
+
+$responsive-positions := static, relative, absolute, fixed

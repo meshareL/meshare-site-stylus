@@ -1,0 +1,18 @@
+// 进度条
+#ajax-progress
+    width 100%
+    display flex
+    position fixed
+    left 0
+    bottom 0
+    opacity 0
+    transition opacity .4s linear .4s
+    &.is-loading
+        opacity 1
+        transition none     // 加载时立即出现,消失时使用过渡
+    .progress
+        height 2px
+        background-color $bg-green
+        box-shadow: 0 0 10px rgba($bg-green, .7)
+        transition width .4s ease 0s
+

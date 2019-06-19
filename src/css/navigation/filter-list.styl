@@ -1,0 +1,26 @@
+.filter-list
+    list-style none
+    .filter-item
+        color $text-gray
+        position relative
+        padding 6px 0
+        margin-bottom 2px
+        font-size $body-font-size
+        display flex
+        align-items center
+        overflow hidden
+        text-decoration none
+        text-overflow ellipsis
+        white-space nowrap
+        cursor pointer
+        border-radius $border-radius
+        &:hover
+            text-decoration none
+            background-color lighten($gray-200, 3%)
+        &.selected
+            color $text-gray-dark
+            font-weight $font-weight-bold
+            background-color darken($gray-200, 1%)
+        .count
+            float right
+            font-weight $font-weight-bold

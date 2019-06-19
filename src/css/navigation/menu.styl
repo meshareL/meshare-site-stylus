@@ -1,0 +1,73 @@
+/*
+ * 菜单栏flex类型column垂直排列
+ */
+
+/*
+ * <ul class="menu">
+ *     <li class="menu-header"></li>
+ *     <li class="menu=item selected" aria-selected=true></li>
+ *     <li class="menu-item" aria-selected=false></li>
+ * </ul>
+ */
+.menu
+    font-size $body-font-size
+    line-height $lh-default
+    list-style none
+    margin-top 0
+    margin-bottom 15px
+    padding-left 0
+    background-color $bg-white
+    border $border-width $border-style $gray-300
+    border-radius $border-radius
+    display flex
+    flex-direction column
+    .menu-header
+        display block
+        padding $spacer-2 10px
+        margin-top 0
+        margin-bottom 0
+        font-size 13px
+        font-weight $font-weight-bold
+        line-height 20px
+        color $gray-600
+        background-color darken($gray-100, 1%)
+        border-bottom $border-width $border-style $gray-200
+    .menu-item
+        color $text-blue
+        display block
+        position relative
+        padding $spacer-2 10px
+        border-bottom $border-width $border-style $gray-200
+        cursor pointer
+        &:first-child
+            border-top none
+            border-top-left-radius 2px
+            border-top-right-radius 2px
+            &::before
+                border-top-left-radius 2px
+        &:last-child
+            border-bottom none
+            border-bottom-left-radius 2px
+            border-bottom-right-radius 2px
+            &::before
+                border-bottom-left-radius 2px
+        &:hover
+            text-decoration none
+            background-color $gray-100
+        &[aria-selected=true]
+        &.selected
+            color $text-gray-dark
+            background-color $bg-white
+            font-weight $font-weight-bold
+            cursor default
+            &:before
+                content ''
+                position absolute
+                top 0
+                bottom 0
+                left 0
+                width 2px
+                background-color $orange-600
+        .octicon
+            color $text-gray-dark
+            margin-right 5px

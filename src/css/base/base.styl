@@ -1,0 +1,60 @@
+:root
+    --breakpoint-xs $width-xs
+    --breakpoint-sm $width-sm
+    --breakpoint-md $width-md
+    --breakpoint-lg $width-lg
+    --breakpoint-xl $width-xl
+    --font-family-sans-serif $body-font
+    --font-family-monospace $mono-font
+
+body
+    font-family $body-font
+    -webkit-font-smoothing antialiased
+    -moz-osx-font-smoothing grayscale
+    font-size $body-font-size
+    line-height $body-line-height
+    color $text-gray-dark
+    background-color $bg-white
+
+*
+    box-sizing border-box
+
+h1, h2, h3, h4, h5, h6
+    margin-top 0
+    margin-bottom 0
+
+a
+    color $text-blue
+    text-decoration none
+    &:hover
+        text-decoration underline
+
+input, textarea, select, button
+    font-size inherit
+    font-family inherit
+    line-height inherit
+
+button
+    cursor pointer
+    border-radius 0
+
+b, strong
+    font-weight $font-weight-bold
+
+table
+    border-spacing 0
+    border-collapse collapse
+
+th, th
+    padding 0
+
+[hidden][hidden]
+    display none
+
+details
+    &:not([open]) > :not(summary)
+        display none
+    summary
+        cursor pointer
+        &:focus
+            outline none

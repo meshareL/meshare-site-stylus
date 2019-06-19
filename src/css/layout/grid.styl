@@ -1,0 +1,77 @@
+// .col
+
+// 所有col类的公共属性
+$grid-column {
+    position relative
+    width 100%
+    min-height 1px
+    padding-left ($grid-gutter / 2)
+    padding-right ($grid-gutter / 2)
+}
+
+// container基本属性
+.container
+    width 100%
+    padding-left ($grid-gutter / 2)
+    padding-right ($grid-gutter / 2)
+    margin-left auto
+    margin-right auto
+
+.row
+    display flex
+    flex-wrap wrap
+    margin-left ($grid-gutter / -2)
+    margin-right ($grid-gutter / -2)
+
+    // 删除.row的默认负边距,然后删除填充宽度
+    &.no-gutters
+        margin-left 0
+        margin-right 0
+        > .col
+        > [class*='col-']
+            padding-left 0
+            padding-right 0
+
+// 循环设置不同尺寸屏幕的属性
+for $breakpoint, $variant in $responsive-variants
+    // 填充公共属性
+    .col{$variant}
+    .col{$variant}-auto
+        @extend $grid-column !optional
+
+    // 从1开始迭代
+    for $i in range(1, $grid-columns, 1)
+        .col{$variant}-{$i}
+            @extend $grid-column !optional
+
+    // 填充不同尺寸屏幕的不同属性
+    +breakpoint($breakpoint)
+        // container不同尺寸屏幕最大宽度
+        unless $breakpoint == ''
+            .container { max-width: $container-max-widths[$breakpoint]; }
+
+        .col{$variant}
+            flex-basis 0
+            flex-grow 1
+            max-width 100%
+        .col{$variant}-auto
+            flex 0 0 auto
+            width auto
+            max-width none
+        for $i in range(1, $grid-columns, 1)
+            .col{$variant}-{$i}
+                flex 0 0 percentage($i / $grid-columns)
+                max-width percentage($i / $grid-columns)
+
+        // 元素order排列属性
+        .order{$variant}-first { order: -1; }
+        .order{$variant}-last { order: $grid-columns + 1; }
+
+        for $i in range(0, $grid-columns, 1)
+            .order{$variant}-{$i} { order: $i; }
+
+        // ($grid-columns - 1) 用整个.row作为偏移不合理
+        for $i in range(0, $grid-columns - 1, 1)
+            unless $variant == '' and $i == 0       // 避免出现无用的.offset-0
+                .offset{$variant}-{$i}
+                    margin-left ($i / $grid-columns) == 0 ? 0 : percentage($i / $grid-columns)

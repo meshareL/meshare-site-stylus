@@ -1,0 +1,27 @@
+{
+  "name": "meshare-stylus",
+  "version": "1.0.0",
+  "description": "meshare stylus编译",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config build/webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webpack": "^4.33.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.6.0",
+    "css-loader": "^2.1.1",
+    "cssnano": "^4.1.10",
+    "mini-css-extract-plugin": "^0.7.0",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2",
+    "webpack-cli": "^3.3.2"
+  }
+}

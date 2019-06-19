@@ -1,0 +1,40 @@
+// .label和.label-outline通用样式
+// 使用border-radius-$size可以控制边框角度
+.label, .label-outline
+    display inline-block
+    padding 3px $spacer-1
+    font-size $font-size-small
+    line-height $lh-condensed-ultra
+    border-radius 2px
+    &:hover
+        text-decoration none
+
+/*
+ * 背景颜色默认为浅灰灰色
+ * 使用.bg-$color控制label背景颜色
+ * 文字颜色默认深灰色
+ * 使用.text-$color控制label文字颜色
+ *
+ * <span class="label bg-blue text-orange"></span>
+ */
+.label
+    font-weight $font-weight-bold
+    color $gray-600
+    background-color lighten($gray-200, 3%)
+    box-shadow inset 0 -1px 0 rgba($black, 0.12)
+
+/*
+ * 背景颜色默认透明
+ * 边框颜色默认浅灰色
+ * 使用.border-$color控制边框颜色,.border-dashed可以使边框变为虚线
+ * 文字颜色默认深灰色
+ * 使用.text-$color控制文字颜色
+ *
+ * <span class="label-outline bg-blue text-orange"></span>
+ */
+.label-outline
+    font-weight $font-weight-normal
+    color $text-gray
+    background-color transparent
+    border $border-width $border-style $black-fade-15
+    box-shadow none

@@ -1,0 +1,58 @@
+// 编辑文章 标签
+.publication
+    .input-group
+        display flex
+        flex-direction row
+        align-items center
+
+        .input-title
+        .input-summary
+            color $text-gray
+            width 100%
+            padding $spacer-2
+            margin-bottom $spacer-3
+            border none
+            border-bottom $border
+            border-radius 0
+            &:focus
+                outline none
+                border-bottom-color $blue-400
+        .input-title
+            font-size 22px
+            line-height 22px
+        .input-summary
+            font-size 20px
+            line-height 20px
+
+    .word-number
+        color $text-gray
+        font-size 13px
+        font-weight $font-weight-bold
+        margin-left 6px
+
+    .category-list
+        width 100%
+        max-width @width
+        height @width
+        max-height @width
+        padding 3px
+        list-style none
+        border $border
+        border-radius $border-radius
+        display flex
+        flex-direction row
+        align-items center
+
+        &:empty
+            border-color $border-red-light
+            user-select none
+            &:before
+                content '点击左边按钮选择文章分类,请至少选择一个标签'
+                font-size 15px
+                color $text-gray
+
+        .category-item
+            padding 6px
+            margin-right $spacer-2
+            &:last-child
+                margin-right 0

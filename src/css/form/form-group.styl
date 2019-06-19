@@ -1,0 +1,82 @@
+// Form groups
+
+.form-group
+    margin 15px 0
+
+    .form-control
+        width 440px
+        max-width 100%
+        margin-right 5px
+        background-color $bg-gray-light
+        &:focus { background-color: $bg-white; }
+        &.shorter { width: 130px; }
+        &.short { width: 250px; }
+        &.long { width: 100%; }
+
+    textarea.form-control
+        width 100%
+        height 200px
+        min-height 200px
+        &.short
+            height 50px
+            min-height 50px
+
+    // Label 标签
+    label
+        margin 0 0 6px 0
+        display block
+
+    // 表单项是否必须
+    &.required
+        label::after
+            padding-left 5px
+            color $text-red
+            content '*'
+
+    // 表单验证,错误信息
+    &.erring
+    &.warning
+        .hint-text
+            position relative
+            z-index 10
+            display table
+            max-width 450px // Keep our long errors readable
+            padding 5px $spacer-2
+            margin 6px 0 0 0
+            font-size 13px
+            font-weight $font-weight-normal
+            border-width $border-width
+            border-style $border-style
+            border-radius $border-radius
+            &::before
+            &::after
+                content ' '
+                position absolute
+                left 10px
+                z-index 10
+                border 6px $border-style transparent
+                pointer-events none
+            &::before
+                bottom 100%
+            &::after
+                bottom 96%
+    &.erring
+        label
+            color $text-red
+        .hint-text
+            color $red-900
+            background-color $bg-red-light
+            border-color $border-red-light
+            &::before
+                border-bottom-color $border-red-light
+            &::after
+                border-bottom-color $bg-red-light
+    &.warning
+        .hint-text
+            color $yellow-900
+            background-color $yellow-100
+            border-color $border-yellow
+            &::before
+                border-bottom-color $border-yellow
+            &::after
+                border-bottom-color $yellow-100

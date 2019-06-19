@@ -1,0 +1,21 @@
+// 自适应
+breakpoint($breakpoint)
+    if $breakpoint == ''
+        {block}
+    else
+        $value = $breakpoints[$breakpoint]
+        if $value != null
+            @media only screen and (min-width $value)
+                {block}
+        else
+            error($breakpoint + '没有对应的属性,请确保' + $breakpoints + '中有对应的属性')
+
+// 清除浮动
+clearfix()
+    &::before
+        display table
+        content ""
+    &::after
+        display table
+        clear both
+        content ""

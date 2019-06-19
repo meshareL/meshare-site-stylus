@@ -1,0 +1,52 @@
+.box
+    background-color $white
+    border $border-width $border-style $border-gray-dark
+    border-radius $border-radius
+
+    .box-header
+        padding $spacer-3
+        margin -($border-width) -($border-width) 0
+        background-color $bg-gray
+        border-color $border-gray-dark
+        border-style $border-style
+        border-width $border-width
+        border-top-left-radius $border-radius
+        border-top-right-radius $border-radius
+
+    .box-title
+        font-size $body-font-size
+        font-weight $font-weight-bold
+
+    .box-body
+        padding $spacer-3
+        border-bottom $border-width $border-style $border-gray
+        // Ensures bottom-border doesn't poke out when .Box-body used without box-footer
+        &:last-of-type
+            margin-bottom -($border-width)
+            border-bottom-right-radius 2px
+            border-bottom-left-radius 2px
+
+    .box-footer
+        padding $spacer-3
+        margin-top -1px // prevents double border when used with .Box-body
+        border-top $border-width $border-style $border-gray
+
+    // Box rows
+    .box-row
+        padding $spacer-3
+        margin-top -1px
+        list-style-type none // To account for applying Box component to a list
+        border-top $border-width $border-style $border-gray
+        &:first-child
+            border-top-color transparent
+            border-top-left-radius 2px
+            border-top-right-radius 2px
+        &:last-child
+            border-bottom-right-radius 2px
+            border-bottom-left-radius 2px
+        // Adds a blue vertical line to the left of the row
+        // For indicating a row item is unread
+        &.box-row-unread,
+        // .unread to be deprecated with .Box-row-unread
+        &.unread
+            box-shadow 2px 0 0 $blue inset

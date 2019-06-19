@@ -1,0 +1,190 @@
+// Type scale variables found in ../support/lib/variables.scss
+// $h00-size-mobile: 40px;
+// $h0-size-mobile: 32px;
+// $h1-size-mobile: 26px;
+// $h2-size-mobile: 22px;
+// $h3-size-mobile: 18px;
+// $h00-size: 48px;
+// $h0-size: 40px;
+// $h1-size: 32px;
+// $h2-size: 24px;
+// $h3-size: 20px;
+// $h4-size: 16px;
+// $h5-size: 14px;
+// $h6-size: 12px;
+
+/* Set the font size to 26px */
+.h1
+    font-size $h1-size-mobile !important
+    +breakpoint(md)
+        font-size $h1-size !important
+
+/* Set the font size to 22px */
+.h2
+    font-size $h2-size-mobile !important
+    +breakpoint(md)
+        font-size $h2-size !important
+
+/* Set the font size to 18px */
+.h3
+    font-size $h3-size-mobile !important
+    +breakpoint(md)
+        font-size $h3-size !important
+
+/* Set the font size to #{$h4-size} */
+.h4
+    font-size $h4-size !important
+
+/* Set the font size to #{$h5-size} */
+.h5 { font-size: $h5-size !important; }
+
+// Does not include color property like typography base
+// styles, color should be applied with color utilities.
+/* Set the font size to #{$h6-size} */
+.h6 { font-size: $h6-size !important; }
+
+// Heading utilities
+.h1, .h2, .h3, .h4, .h5, .h6 { font-weight: $font-weight-bold !important; }
+
+// Type utilities that match type sale
+/* Set the font size to 26px */
+.f1
+    font-size $h1-size-mobile !important
+    +breakpoint(md)
+        font-size $h1-size !important
+
+/* Set the font size to 22px */
+.f2
+    font-size $h2-size-mobile !important
+    +breakpoint(md)
+        font-size: $h2-size !important
+
+/* Set the font size to 18px */
+.f3
+    font-size $h3-size-mobile !important
+    +breakpoint(md)
+        font-size $h3-size !important
+
+/* Set the font size to #{$h4-size} */
+.f4
+    font-size $h4-size !important
+    +breakpoint(md)
+        font-size $h4-size !important
+
+/* Set the font size to #{$h5-size} */
+.f5 { font-size: $h5-size !important; }
+/* Set the font size to #{$h6-size} */
+.f6 { font-size: $h6-size !important; }
+
+// Type utils with light weight that match type scale
+/* Set the font size to 40px and weight to light */
+.f00-light
+    font-size $h00-size-mobile !important
+    font-weight $font-weight-light !important
+    +breakpoint(md)
+        font-size $h00-size !important
+
+/* Set the font size to 32px and weight to light */
+.f0-light
+    font-size $h0-size-mobile !important
+    font-weight $font-weight-light !important
+    +breakpoint(md)
+        font-size $h0-size !important
+
+
+/* Set the font size to 26px and weight to light */
+.f1-light
+    font-size $h1-size-mobile !important
+    font-weight $font-weight-light !important
+    +breakpoint(md)
+        font-size $h1-size !important
+
+
+/* Set the font size to 22px and weight to light */
+.f2-light
+    font-size $h2-size-mobile !important
+    font-weight $font-weight-light !important
+    +breakpoint(md)
+        font-size $h2-size !important
+
+// Same size and weight as .lead but without color property
+/* Set the font size to 18px and weight to light */
+.f3-light
+    font-size $h3-size-mobile !important
+    font-weight $font-weight-light !important
+    +breakpoint(md)
+        font-size $h3-size !important
+
+
+// Smallest text size
+/* Set the font size to ${#h6-size} */
+.text-small { font-size: $h6-size !important; } // 12px
+
+/* Large leading paragraphs */
+.lead
+    margin-bottom 30px
+    font-size $h3-size
+    font-weight $font-weight-light
+    color $gray-600
+
+// 行高变化
+/* 将行高设置为超浓缩 */
+.lh-condensed-ultra { line-height: $lh-condensed-ultra !important; }
+/* 将行高设置为浓缩 */
+.lh-condensed { line-height: $lh-condensed !important; }
+/* 将行高设置为默认值 */
+.lh-default { line-height: $lh-default !important; }
+/* 将行高设置为零 */
+.lh-0 { line-height: 0 !important; }
+
+// 文字对齐
+/* 文本右对齐 */
+.text-right { text-align: right !important; }
+/* 文字左对齐 */
+.text-left { text-align: left !important; }
+/* 文字居中对齐 */
+.text-center { text-align: center !important; }
+
+// 文字样式
+/* 文字粗细正常(400) */
+.text-normal { font-weight: $font-weight-normal !important; }
+/* 文字设置粗体 */
+.text-bold { font-weight: $font-weight-bold !important;}
+/* 文字设置斜体 */
+.text-italic { font-style: italic !important; }
+/* 文字大写 */
+.text-uppercase { text-transform: uppercase !important; }
+/* 添加下划线 */
+.text-underline { text-decoration: underline !important; }
+/* 取消下划线 */
+.no-underline { text-decoration: none !important; }
+/* pre 不换行 */
+.no-wrap { white-space: nowrap !important; }
+/* pre 正常保留空白 */
+.ws-normal { white-space: normal !important; }
+/* pre标签 换行并保留空格 */
+.ws-wrap { white-space: pre-wrap !important; }
+/* 允许没有空格的长行换行 */
+.wb-break-all { word-break: break-all !important; }
+
+.text-emphasized
+    font-weight $font-weight-bold
+    color $text-gray-dark
+
+.list-style-none { list-style: none !important; }
+
+// 文字阴影
+/* 添加深色文字阴影 */
+.text-shadow-dark
+    text-shadow 0 1px 1px rgba($black, 0.25), 0 1px 25px rgba($black, 0.75)
+/* 添加浅色文字阴影 */
+.text-shadow-light
+    text-shadow 0 1px 0 rgba($white, 0.5)
+
+/* 设置为等宽字体 */
+.text-mono
+    font-family $mono-font !important
+
+/* 禁止用户选择 */
+.user-select-none
+    user-select none !important

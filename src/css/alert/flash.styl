@@ -1,0 +1,59 @@
+// alert
+
+.flash
+    position fixed
+    top 20px
+    left 50%
+    min-width 380px
+    padding $spacer-3
+    font-size $body-font-size
+    color $blue-800
+    background-color $blue-100
+    border $border-width $border-style $border-black-fade
+    border-radius $border-radius
+    overflow hidden
+    transform translateX(-50%)
+    transition opacity .3s, transform .4s
+
+    // alert themes
+    &.flash-info
+        color $blue-800
+        background-color $blue-100
+        border-color $border-black-fade
+
+    &.flash-warn
+        color $yellow-900
+        background-color $yellow-100
+        border-color $black-fade-15
+
+    &.flash-error
+        color $red-900;
+        background-color $red-100
+        border-color $black-fade-15
+
+    &.flash-success
+        color $green-800
+        background-color $green-100
+        border-color $black-fade-15
+
+    // Close button
+    .flash-close
+        float right
+        padding $spacer-3
+        margin -($spacer-3)
+        color inherit
+        text-align center
+        cursor pointer
+        // Undo `<button>` styles
+        background none
+        border none
+        appearance none
+        opacity .6
+        &:focus { outline: none }
+        &:hover { opacity: 1 }
+
+
+.vue-flash-fade-enter
+.vue-flash-fade-leave-active
+    opacity 0
+    transform translate(-50%, -100%)

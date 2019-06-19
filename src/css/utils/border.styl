@@ -1,0 +1,105 @@
+// border util
+// 添加灰色边框
+.border
+    border $border !important
+.border-top
+    border-top $border !important
+.border-right
+    border-right $border !important
+.border-bottom
+    border-bottom $border !important
+.border-left
+    border-left $border !important
+.border-x
+    border-left $border !important
+    border-right $border !important
+.border-y
+    border-top $border !important
+    border-bottom: $border !important
+
+// 删除边框
+.border-none
+    border none !important
+.border-top-none
+    border-top none !important
+.border-right-none
+    border-right none !important
+.border-bottom-none
+    border-bottom none !important
+.border-left-none
+    border-left none !important
+
+// 更改边框渲染方式(虚线)
+.border-dashed
+    border-style dashed !important
+
+// 改变边框颜色 .border .border-blue
+.border-blue
+    border-color $border-blue !important
+.border-blue-light
+    border-color $border-blue-light !important
+.border-green
+    border-color $border-green !important
+.border-green-light
+    border-color $border-green-light !important
+.border-red
+    border-color $border-red !important
+.border-red-light
+    border-color $border-red-light !important
+.border-purple
+    border-color $border-purple !important
+.border-yellow
+    border-color $border-yellow !important
+.border-orange
+    border-color $border-orange !important
+.border-orange-light
+    border-color $border-orange-light !important
+.border-gray-light
+    border-color $border-gray-light !important
+.border-gray-dark
+    border-color $border-gray-dark !important
+.border-black-fade
+    border-color $border-black-fade !important
+.border-white-fade
+    border-color $border-white-fade !important
+// 白色不同透明度
+.border-white-fade-15
+    border-color $white-fade-15 !important
+.border-white-fade-30
+    border-color $white-fade-30 !important
+.border-white-fade-50
+    border-color $white-fade-50 !important
+.border-white-fade-70
+    border-color $white-fade-70 !important
+.border-white-fade-85
+    border-color $white-fade-85 !important
+
+// 给边框添加圆角
+.border-radius-0
+    border-radius 0 !important
+.border-radius-1
+    border-radius $border-radius !important
+.border-radius-2
+    border-radius $border-radius * 2 !important
+
+$edges = {
+    'top': top-left top-right,
+    'right': top-right bottom-right,
+    'bottom': bottom-left bottom-right,
+    'left': top-left bottom-left
+}
+
+for $edge, $corners in $edges
+    .border-radius-{$edge}-{0}
+        for $corner in $corners
+            border-{$corner}-radius 0 !important
+    .border-radius-{$edge}-{1}
+        for $corner in $corners
+            border-{$corner}-radius $border-radius !important
+    .border-radius-{$edge}-{2}
+        for $corner in $corners
+            border-{$corner}-radius $border-radius * 2 !important
+
+// 添加一个半径为50%的边框,使之成为一个圆
+.circle
+    border-radius 50% !important

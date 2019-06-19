@@ -1,0 +1,31 @@
+// 按钮组
+
+/*
+ * 为了让辅助技术(如屏幕阅读器)能够表示对一系列按钮进行分组,需要提供适当的角色属性
+ * 按钮组 role=group, 工具栏 role=toolbar
+ * <div class="btn-group" role="group" aria-label="button group">
+ *     <button class="btn" type="button">Left</button>
+ *     <button class="btn" type="button">middle</button>
+ *     <button class="btn" type="button">Right</button>
+ * </div>
+ */
+.btn-group
+    .btn
+        border-radius 0
+        border-right-width 0
+
+        &:first-child
+            border-top-left-radius $border-radius
+            border-bottom-left-radius $border-radius
+        &:last-child
+            border-right-width $border-width
+            border-top-right-radius $border-radius
+            border-bottom-right-radius $border-radius
+
+        &.selected,
+        &:focus,
+        &:active,
+        &:hover
+            border-right-width $border-width
+            + .btn
+                border-left-width 0

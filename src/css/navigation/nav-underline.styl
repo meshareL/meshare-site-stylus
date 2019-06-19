@@ -1,0 +1,47 @@
+/*
+ * underline-nav默认对齐方式为 space-between
+ * 使用.underline-nav-left或.underline-nav-right可以改变元素对齐方式
+ * 使用.selected或更改aria-selected=true可以使元素处于被选中状态
+ */
+
+/*
+ * <nav class="nav-underline">
+ *     <ul class="nav-body">
+ *         <li class="nav-item selected"></li>
+ *         <li class="nav-item"></li>
+ *     </ul>
+ * </nav>
+ */
+.nav-underline
+    display flex
+    justify-content space-between
+    border-bottom $border
+    .nav-body
+        padding 0
+        margin 0 0 -1px 0
+        display flex
+        list-style none
+        .nav-item
+            padding $spacer-3 $spacer-2
+            margin-right $spacer-3
+            font-size $body-font-size
+            line-height $lh-default
+            color $text-gray
+            text-align center
+            border-bottom 2px $border-style transparent
+            &:hover
+            &:focus
+                color $text-gray-dark
+                text-decoration none
+                border-bottom-color $gray-300
+                transition .2s ease
+                cursor pointer
+            &[aria-selected=true]
+            &.selected
+                font-weight $font-weight-bold
+                color $text-gray-dark
+                border-bottom-color $orange-600
+    &.nav-underline-left
+        justify-content flex-start
+    &.nav-underline-right
+        justify-content flex-end

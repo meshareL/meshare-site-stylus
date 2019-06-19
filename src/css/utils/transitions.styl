@@ -1,0 +1,13 @@
+// 过渡效果工具
+
+// vue 专用
+.component-fade-enter-active
+    transition all .3s ease
+
+.component-fade-leave-active
+    transition all .2s cubic-bezier(1, .5, .8, 1)
+
+.component-fade-enter
+.component-fade-leave-to
+    transform translateX(10px)
+    opacity 0
