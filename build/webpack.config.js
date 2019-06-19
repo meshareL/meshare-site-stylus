@@ -21,9 +21,9 @@ module.exports = {
                             publicPath: path.join(__dirname, '../dist')
                         }
                     },
-                    'css-loader',
-                    'postcss-loader',
-                    'stylus-loader'
+                    {loader: 'css-loader'},
+                    {loader: 'postcss-loader'},
+                    {loader: 'stylus-loader'}
                 ]
             }
         ]
@@ -35,7 +35,7 @@ module.exports = {
         }),
         new OptimizeCSSAssetsPlugin({
             assetNameRegExp: /\.css$/g,
-            cssProcessor: require('cssnano'),
+            cssProcessor: require('cssnano'),       // 引入cssnano配置压缩选项
             cssProcessorOptions: {
                 preset: [
                     'default', {
@@ -47,7 +47,8 @@ module.exports = {
                     inline: false,      // 不生成内联映射,这样配置就会生成一个source-map文件
                     annotation: true    // 向css文件添加source-map路径注释
                 }
-            }
+            },
+            canPrint: true              //是否将插件信息打印到控制台
         })
     ],
     optimization: {
