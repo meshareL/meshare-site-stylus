@@ -1,61 +1,61 @@
 // markdown编辑器
 
 .markdown-editor
-    height 500px
     display flex
     flex-direction row
+    height 500px
     border $border
     border-radius $border-radius
     &.full-screen
-        height auto
         position fixed
         top 0
         right 0
         bottom 0
         left 0
         z-index 100
+        height auto
         border-radius 0
 
     .markdown-write
-        width 50%
         display flex
         flex 0 0 50%
         flex-direction column
+        width 50%
         border-right $border
         border-top-left-radius $border-radius
         border-bottom-left-radius $border-radius
         &.single-write
-            width 100%
-            flex 0 0 100%
             overflow-y auto
+            flex 0 0 100%
+            width 100%
             border-right none
             border-top-right-radius $border-radius
             .write-toolbar
                 border-bottom-right-radius $border-radius
 
         .write-input
+            padding 10px 15px
             width 100%
             max-width @width
             height 100%
-            padding 10px 15px
             font-size 15px
+            font-family $mono-font
             line-height $lh-default
             background-color $bg-gray-light
             border none
             border-bottom $border-width dashed $border-color
             border-top-left-radius $border-radius
-            font-family $mono-font
             resize none
             &:focus
                 outline none
 
         .write-toolbar
-            margin 0
-            padding 10px
             display flex
             flex-direction row
             align-items center
             justify-content space-between
+            margin 0
+            padding 10px
             background-color $bg-white
             border none
             border-bottom-left-radius $border-radius
@@ -63,8 +63,8 @@
                 display flex
                 flex-direction row
                 align-items center
-                border-top none
                 list-style none
+                border-top none
                 .toolbar-item
                     margin-right $spacer-3
                     &:last-child
@@ -73,9 +73,9 @@
                         vertical-align middle
 
     .markdown-preview
-        width 50%
-        flex 0 0 50%
         overflow-y auto
+        flex 0 0 50%
+        width 50%
         padding 10px 15px
         background-color $bg-white
         border-top-right-radius $border-radius
@@ -110,16 +110,16 @@
         margin 0
         padding 0.2em 0.4em
         font-size 85%
+        font-family $mono-font
         color $text-gray-dark
         background-color rgba($black, 0.05)
         border-radius $border-radius
-        font-family $mono-font
     pre
         overflow auto
         font-size 85%
         line-height 1.45
+        word-wrap normal
         background-color $gray-100
         border-radius $border-radius
-        word-wrap normal
         code
             background-color transparent

@@ -4,31 +4,31 @@
     font-size 13px
 
     .pagination
-        padding 0
-        margin 15px 0
-        list-style none
         display flex
         flex-direction row
         align-items center
         justify-content center
+        padding 0
+        margin 15px 0
+        list-style none
 
         .page-item
             padding 7px 12px
-            border $border
-            border-right none
             font-weight $font-weight-bold
             font-style normal
             line-height $lh-default
-            color $text-blue
-            background-color $bg-white
             white-space nowrap
             user-select none
+            color $text-blue
+            background-color $bg-white
+            border $border
+            border-right none
             cursor pointer
 
             &:focus
             &:hover
-                outline none
                 z-index 2
+                outline none
                 text-decoration none
                 background-color darken($gray-100, 2%)
                 border-color $border-gray

@@ -61,9 +61,9 @@
         top 100%
         left 0
         z-index 100
-        list-style none
         padding 5px 0
         margin $spacer-1 0 0 0
+        list-style none
         background-color $bg-white
         background-clip padding-box
         border $border-width $border-style $black-fade-15
@@ -97,11 +97,11 @@
 
         // 下拉菜单选项
         .dropdown-item
-            color $text-gray-dark
             display block
-            padding $spacer-1 $spacer-3
-            white-space nowrap
             overflow hidden
+            padding $spacer-1 $spacer-3
+            color $text-gray-dark
+            white-space nowrap
             text-overflow ellipsis
             cursor pointer
             &:hover
@@ -111,8 +111,8 @@
 
         // 下拉菜单分隔符,可以使用<hr/>
         .dropdown-divider
-            height 1px
             display block
+            height 1px
             margin $spacer-2 1px
             background-color $gray-200
             border none
@@ -136,10 +136,10 @@
 
             // 下拉菜单关闭按钮
             .modal-close-btn
-                padding 0
-                border none
                 display block
                 float right
+                padding 0
+                border none
                 color $gray-400
                 background transparent
                 cursor pointer
@@ -150,13 +150,13 @@
 
         // 下拉菜单body,覆盖ul,ol默认样式
         .dropdown-modal-body
+            position relative
+            overflow auto
             margin 0
             padding 0
             list-style none
             font-size 13px
             color $text-gray
-            position relative
-            overflow auto
             // 下拉菜单选项
             .dropdown-modal-item
                 color inherit

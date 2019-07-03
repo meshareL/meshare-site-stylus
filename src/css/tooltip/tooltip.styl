@@ -5,7 +5,7 @@
     to
         opacity 1
 
-[tooltip]
+[tooltip], .tooltip
     position relative
 
     &::before
@@ -18,11 +18,9 @@
 
     &::before
         content attr(data-content) ''
-        font-size 11px
-        font-family $body-font
-        -webkit-font-smoothing subpixel-antialiased
-        line-height $lh-default
         padding $em-spacer-5 $em-spacer-6
+        font normal normal 11px/1.5 $body-font
+        -webkit-font-smoothing subpixel-antialiased
         color $tooltip-text-color
         background-color $tooltip-background-color
         border-radius $border-radius
@@ -49,7 +47,8 @@
             animation-timing-function ease-in
             animation-delay $tooltip-delay
 
-    &[data-placement='top']
+    &[data-placement='top'],
+    &.tooltip-top
         &::before
             right 50%
             bottom 100%
@@ -62,6 +61,7 @@
             border-top-color $tooltip-background-color
 
     &[data-placement='right']
+    &.tooltip-right
         &::before
             bottom 50%
             left 100%
@@ -75,6 +75,7 @@
             border-right-color $tooltip-background-color
 
     &[data-placement='bottom']
+    &.tooltip-bottom
         &::before
             top 100%
             right 50%
@@ -87,6 +88,7 @@
             border-bottom-color $tooltip-background-color
 
     &[data-placement='left']
+    &.tooltip-left
         &::before
             right 100%
             bottom 50%

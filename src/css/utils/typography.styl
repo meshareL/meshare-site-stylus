@@ -13,102 +13,93 @@
 // $h5-size: 14px;
 // $h6-size: 12px;
 
-/* Set the font size to 26px */
+/* 将字体大小设置为26px */
 .h1
     font-size $h1-size-mobile !important
     +breakpoint(md)
         font-size $h1-size !important
 
-/* Set the font size to 22px */
+/* 将字体大小设置为22px */
 .h2
     font-size $h2-size-mobile !important
     +breakpoint(md)
         font-size $h2-size !important
 
-/* Set the font size to 18px */
+/* 将字体大小设置为18px */
 .h3
     font-size $h3-size-mobile !important
     +breakpoint(md)
         font-size $h3-size !important
 
-/* Set the font size to #{$h4-size} */
-.h4
-    font-size $h4-size !important
+/* 将字体大小设置为16px */
+.h4 { font-size: $h4-size !important; }
 
-/* Set the font size to #{$h5-size} */
+/* 将字体大小设置为14px */
 .h5 { font-size: $h5-size !important; }
 
-// Does not include color property like typography base
-// styles, color should be applied with color utilities.
-/* Set the font size to #{$h6-size} */
+/* 将字体大小设置为12px */
 .h6 { font-size: $h6-size !important; }
 
-// Heading utilities
+// 设置为粗体
 .h1, .h2, .h3, .h4, .h5, .h6 { font-weight: $font-weight-bold !important; }
 
-// Type utilities that match type sale
-/* Set the font size to 26px */
+// 不设置粗体
+/*  将字体大小设置为26px */
 .f1
     font-size $h1-size-mobile !important
     +breakpoint(md)
         font-size $h1-size !important
 
-/* Set the font size to 22px */
+/* 将字体大小设置为22px */
 .f2
     font-size $h2-size-mobile !important
     +breakpoint(md)
         font-size: $h2-size !important
 
-/* Set the font size to 18px */
+/* 将字体大小设置为18px */
 .f3
     font-size $h3-size-mobile !important
     +breakpoint(md)
         font-size $h3-size !important
 
-/* Set the font size to #{$h4-size} */
-.f4
-    font-size $h4-size !important
-    +breakpoint(md)
-        font-size $h4-size !important
-
-/* Set the font size to #{$h5-size} */
+/* 将字体大小设置为16px */
+.f4 { font-size: $h4-size !important; }
+/* 将字体大小设置为14px */
 .f5 { font-size: $h5-size !important; }
-/* Set the font size to #{$h6-size} */
+/* 将字体大小设置为12px */
 .f6 { font-size: $h6-size !important; }
 
 // Type utils with light weight that match type scale
-/* Set the font size to 40px and weight to light */
+/* 将字体大小设置为40px文本粗细为light */
 .f00-light
     font-size $h00-size-mobile !important
     font-weight $font-weight-light !important
     +breakpoint(md)
         font-size $h00-size !important
 
-/* Set the font size to 32px and weight to light */
+/* 将字体大小设置为32px文本粗细为light */
 .f0-light
     font-size $h0-size-mobile !important
     font-weight $font-weight-light !important
     +breakpoint(md)
         font-size $h0-size !important
 
-
-/* Set the font size to 26px and weight to light */
+/* 将字体大小设置为26px文本粗细为light */
 .f1-light
     font-size $h1-size-mobile !important
     font-weight $font-weight-light !important
     +breakpoint(md)
         font-size $h1-size !important
 
-
-/* Set the font size to 22px and weight to light */
+/* 将字体大小设置为22px文本粗细为light */
 .f2-light
     font-size $h2-size-mobile !important
     font-weight $font-weight-light !important
     +breakpoint(md)
         font-size $h2-size !important
 
-// Same size and weight as .lead but without color property
-/* Set the font size to 18px and weight to light */
+// 文本大小与粗细与.lead相同,但无颜色属性
+/* 将字体大小设置为18px文本粗细为light */
 .f3-light
     font-size $h3-size-mobile !important
     font-weight $font-weight-light !important
@@ -116,18 +107,18 @@
         font-size $h3-size !important
 
 
-// Smallest text size
-/* Set the font size to ${#h6-size} */
-.text-small { font-size: $h6-size !important; } // 12px
+// 最小的文字大小
+/* 将字体大小设置为12px */
+.text-small { font-size: $h6-size !important; }
 
-/* Large leading paragraphs */
+/* 大量的主要段落 */
 .lead
     margin-bottom 30px
     font-size $h3-size
     font-weight $font-weight-light
     color $gray-600
 
-// 行高变化
+// 行高设置
 /* 将行高设置为超浓缩 */
 .lh-condensed-ultra { line-height: $lh-condensed-ultra !important; }
 /* 将行高设置为浓缩 */
@@ -138,11 +129,8 @@
 .lh-0 { line-height: 0 !important; }
 
 // 文字对齐
-/* 文本右对齐 */
-.text-right { text-align: right !important; }
-/* 文字左对齐 */
-.text-left { text-align: left !important; }
-/* 文字居中对齐 */
+.text-left   { text-align: left !important; }
+.text-right  { text-align: right !important; }
 .text-center { text-align: center !important; }
 
 // 文字样式

@@ -1,26 +1,25 @@
 // display util
 
-$display-values = block flex inline inline-block inline-flex none table table-cell
+$display-values = block flex inline inline-block inline-flex none table table-cell none
 
-for $display in $display-values
-    .d-{$display} { display: $display !important; }
+for $breakpoint, $variant in $responsive-variants
+    +breakpoint($breakpoint)
+        for $display in $display-values
+            .d{$variant}-{$display} { display: $display !important; }
 
 .v-hidden { visibility: hidden !important; }
 .v-visible { visibility: visible !important; }
 
-.d-none
-    display none !important
-
 // Hide utilities for each breakpoint
 // Each hide utility only applies to one breakpoint range.
 @media only screen and (max-width $width-sm - 1px)
-    .d-none-sm { display: none !important; }
+    .hide-sm { display: none !important; }
 @media only screen and (min-width $width-sm) and (max-width $width-md - 1px)
-    .d-none-md { display: none !important; }
+    .hide-md { display: none !important; }
 @media only screen and (min-width $width-md) and (max-width $width-lg - 1px)
-    .d-none-lg { display: none !important; }
+    .hide-lg { display: none !important; }
 @media only screen and (min-width $width-lg)
-    .d-none-xl { display: none !important; }
+    .hide-xl { display: none !important; }
 
 /* Set the table-layout to fixed */
 .table-fixed { table-layout: fixed !important; }

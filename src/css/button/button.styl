@@ -75,6 +75,50 @@
     &.btn-bold
         font-weight $font-weight-bold
 
+
+.btn-link
+    display inline-block
+    padding 0
+    font-size inherit
+    color $text-blue
+    text-decoration none
+    white-space nowrap
+    cursor pointer
+    user-select none
+    background-color transparent
+    border none
+    appearance none
+    &:hover
+        text-decoration underline
+    &:disabled
+        &,
+        &:hover
+            color rgba($gray-600, 0.5)
+            cursor default
+
+.btn-icon
+    display inline-block
+    padding 0
+    font-size inherit
+    color inherit
+    text-decoration none
+    white-space nowrap
+    user-select none
+    background-color transparent
+    border none
+    appearance icon
+    cursor pointer
+    &:focus
+        outline none
+    &:hover
+        text-decoration none
+    &:disabled
+        &, &:hover
+            color rgba($gray-600, 0.5)
+            cursor default
+    .octicon
+        vertical-align middle
+
 .hidden-text-expander
     display block
     &.inline
@@ -124,46 +168,3 @@
     &:hover
         color $text-blue
         cursor pointer
-
-.btn-link
-    display inline-block
-    padding 0
-    font-size inherit
-    color $text-blue
-    text-decoration none
-    white-space nowrap
-    cursor pointer
-    user-select none
-    background-color transparent
-    border 0
-    appearance none
-    &:hover
-        text-decoration underline
-    &:disabled
-        &,
-        &:hover
-            color rgba($gray-600, 0.5)
-            cursor default
-
-.btn-icon
-    padding 0
-    border none
-    background-color transparent
-    display inline-block
-    font-size inherit
-    color inherit
-    text-decoration none
-    white-space nowrap
-    user-select none
-    appearance icon
-    cursor pointer
-    &:focus
-        outline none
-    &:hover
-        text-decoration none
-    &:disabled
-        &, &:hover
-            color rgba($gray-600, 0.5)
-            cursor default
-    .octicon
-        vertical-align middle
