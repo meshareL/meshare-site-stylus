@@ -29,29 +29,27 @@
         flex-direction row
         list-style none
 
-        .nav-item
-            padding $spacer-2 12px
-            font-size $body-font-size
-            line-height 20px
-            color $gray-600
+    .nav-item
+        padding $spacer-2 12px
+        font-size $body-font-size
+        line-height 20px
+        color $gray-600
+        background-color transparent
+        text-decoration none
+        cursor pointer
+        user-select none
+        &:hover
+        &:focus
+            color $text-gray-dark
             text-decoration none
-            background-color transparent
-            user-select none
-            cursor pointer
-            &:hover
-            &:focus
-                color $text-gray-dark
-                text-decoration none
-            &[aria-current=true]
-            &[aria-selected=true]
-            &.selected
-                margin-bottom -1px
-                font-weight $font-weight-bold
-                color $text-gray-dark
-                background-color $bg-white
-                border $border-width $border-style $gray-300
-                border-bottom none
-                border-radius $border-radius $border-radius 0 0
+        &.selected
+            margin-bottom -1px
+            border $border-width $border-style $gray-300
+            border-bottom none
+            border-radius $border-radius $border-radius 0 0
+            font-weight $font-weight-bold
+            color $text-gray-dark
+            background-color $bg-white
 
     // 更改整体排列方式
     &.nav-tabs-left

@@ -5,7 +5,7 @@
     to
         opacity 1
 
-[tooltip], .tooltip
+.tooltip
     position relative
 
     &::before
@@ -17,13 +17,12 @@
         pointer-events none
 
     &::before
-        content attr(data-content) ''
+        content attr(aria-label) ''
         padding $em-spacer-5 $em-spacer-6
+        border-radius $border-radius
         font normal normal 11px/1.5 $body-font
         -webkit-font-smoothing subpixel-antialiased
         color $tooltip-text-color
-        background-color $tooltip-background-color
-        border-radius $border-radius
         text-align center
         text-decoration none
         text-shadow none
@@ -31,6 +30,7 @@
         letter-spacing normal
         word-wrap break-word
         white-space pre
+        background-color $tooltip-background-color
 
     &::after
         content ''
@@ -47,7 +47,6 @@
             animation-timing-function ease-in
             animation-delay $tooltip-delay
 
-    &[data-placement='top'],
     &.tooltip-top
         &::before
             right 50%
@@ -60,7 +59,6 @@
             margin-right -6px
             border-top-color $tooltip-background-color
 
-    &[data-placement='right']
     &.tooltip-right
         &::before
             bottom 50%
@@ -74,7 +72,6 @@
             margin-top -6px
             border-right-color $tooltip-background-color
 
-    &[data-placement='bottom']
     &.tooltip-bottom
         &::before
             top 100%
@@ -87,7 +84,6 @@
             margin-right -6px
             border-bottom-color $tooltip-background-color
 
-    &[data-placement='left']
     &.tooltip-left
         &::before
             right 100%

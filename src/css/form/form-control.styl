@@ -11,17 +11,17 @@ label { font-weight: $font-weight-bold; }
 
 .form-control,
 .form-select
-    min-height 34px
+    vertical-align middle
     padding 6px $spacer-2
+    border 1px solid $border-gray-dark
+    border-radius 3px
+    min-height 34px
     font-size $h4-size
     line-height 20px
     color $text-gray-dark
-    vertical-align middle
     background-color $bg-white
     background-repeat no-repeat // Repeat and position set for form states (success, error, etc)
     background-position right 8px center // For form validation. This keeps images 8px from right and centered vertically.
-    border 1px solid $border-gray-dark
-    border-radius 3px
     outline none
     box-shadow $form-control-shadow
     &.focus,
@@ -34,16 +34,12 @@ label { font-weight: $font-weight-bold; }
     +breakpoint(md)
         font-size $body-font-size
 
-// Inputs with contrast for easy light gray backgrounds against white.
+// 输入框添加对比度,亮灰色背景
 .input-contrast
     background-color $bg-gray-light
     &:focus { background-color: $bg-white; }
 
-// Custom styling for HTML5 validation bubbles (WebKit only)
-::placeholder
-    color $text-gray-light
-
-// Mini inputs, to match .minibutton
+// 减小input输入框大小,使其匹配.minibutton
 .input-sm
     min-height 28px
     padding-top 3px
@@ -51,19 +47,21 @@ label { font-weight: $font-weight-bold; }
     font-size $font-size-small
     line-height 20px
 
-// Large inputs
+// 加大input输入框大小
 .input-lg
     padding $spacer-1 10px
     font-size $h4-size
 
-// Full-width inputs
 .input-block
     display block
     width 100%
 
-// Inputs with monospace text
+// input输入框使用等宽字体
 .input-monospace
     font-family $mono-font
+
+// 自定义input输入框占位符颜色 (WebKit only)
+input::placeholder { color: $text-gray-light; }
 
 // Hide the up/down buttons in <input type="number"> in the login form, the
 // input is used for two-factor auth codes, type="number" makes it more usable

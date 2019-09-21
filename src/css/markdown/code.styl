@@ -1,0 +1,50 @@
+.markdown-body
+    code, tt
+        margin 0
+        padding .2em .4em
+        font-size 85%
+        background-color rgba($black, 0.05)
+        border-radius $border-radius
+
+        br { display: none; }
+
+    del code
+        text-decoration inherit
+
+    pre
+        word-wrap normal
+
+        > code
+            margin 0
+            padding 0
+            border none
+            font-size 100%
+            word-break normal
+            white-space pre
+            background transparent
+
+    .highlight
+        margin-bottom $spacer-3
+        pre
+            margin-bottom 0
+            word-break normal
+
+    .highlight pre, pre
+        padding $spacer-3
+        border-radius $border-radius
+        overflow auto
+        font-size 85%
+        line-height 1.45
+        background-color $gray-100
+
+    pre code,
+    pre tt
+        display inline
+        margin 0
+        padding 0
+        border none
+        overflow visible
+        max-width max-content
+        line-height inherit
+        word-break normal
+        background-color transparent

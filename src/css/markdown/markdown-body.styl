@@ -1,0 +1,70 @@
+// https://github.com/primer/css/blob/master/src/markdown/markdown-body.scss
+// 通用markdown文本样式
+
+.markdown-body
+    font-family $body-font
+    font-size $h4-size
+    line-height $body-line-height
+    word-wrap break-word
+
+    &::before
+        content ''
+        display table
+    &::after
+        content ''
+        display table
+        clear botn
+
+    > *:first-child
+        margin-top 0 !important
+    > *:last-child
+        margin-bottom 0 !important
+
+    a:not([href])
+        color inherit
+        text-decoration none
+
+    .absent
+        color $red-600
+
+    .anchor
+        float left
+        padding-right $spacer-1
+        margin-left -20px
+        line-height $lh-condensed-ultra
+        &:focus
+            outline none
+
+    p, blockquote, ul, ol, dl, table, pre, details
+        margin-top 0
+        margin-bottom $spacer-3
+
+    hr
+        padding 0
+        margin $spacer-4 0
+        border none
+        height $em-spacer-3
+        background-color $gray-200
+
+    blockquote
+        padding 0 1em
+        border-left .25em solid lighten($gray-300, 5%)
+        color $gray-500
+
+        > :first-child
+            margin-top 0
+        > :last-child
+            margin-bottom 0
+
+    kbd
+        display inline-block
+        vertical-align middle
+        padding 3px 5px
+        border 1px solid darken($gray-300, 4%)
+        border-bottom $gray-400
+        border-radius 3px
+        box-shadow inset 0 -1px 0 $gray-400
+        font-size 11px
+        line-height 10px
+        color $gray-700
+        background-color $gray-000

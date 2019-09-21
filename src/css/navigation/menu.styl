@@ -10,41 +10,55 @@
  * </ul>
  */
 .menu
-    font-size $body-font-size
-    line-height $lh-default
-    list-style none
+    display flex
+    flex-direction column
     margin-top 0
     margin-bottom 15px
     padding-left 0
-    background-color $bg-white
     border $border-width $border-style $gray-300
     border-radius $border-radius
-    display flex
-    flex-direction column
+    font-size $body-font-size
+    line-height $lh-default
+    background-color $bg-white
+    list-style none
+
     .menu-header
         display block
-        padding $spacer-2 10px
         margin-top 0
         margin-bottom 0
+        padding $spacer-2 10px
         font-size 13px
         font-weight $font-weight-bold
         line-height 20px
         color $gray-600
         background-color darken($gray-100, 1%)
         border-bottom $border-width $border-style $gray-200
+
+        &:hover
+            text-decoration none
+        &:first-child
+            border-top-left-radius $border-radius
+            border-top-right-radius $border-radius
+        &:last-child
+            border-bottom none
+            border-bottom-left-radius $border-radius
+            border-bottom-right-radius $border-radius
+
     .menu-item
-        color $text-blue
-        display block
         position relative
+        display block
         padding $spacer-2 10px
         border-bottom $border-width $border-style $gray-200
+        color $text-blue
         cursor pointer
+
         &:first-child
             border-top none
             border-top-left-radius 2px
             border-top-right-radius 2px
             &::before
                 border-top-left-radius 2px
+
         &:last-child
             border-bottom none
             border-bottom-left-radius 2px
@@ -54,13 +68,13 @@
         &:hover
             text-decoration none
             background-color $gray-100
-        &[aria-selected=true]
+
         &.selected
+            font-weight $font-weight-bold
             color $text-gray-dark
             background-color $bg-white
-            font-weight $font-weight-bold
             cursor default
-            &:before
+            &::before
                 content ''
                 position absolute
                 top 0
@@ -68,6 +82,7 @@
                 left 0
                 width 2px
                 background-color $orange-600
+
         .octicon
-            color $text-gray-dark
             margin-right 5px
+            color $text-gray-dark

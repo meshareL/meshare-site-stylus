@@ -1,20 +1,29 @@
+h1 { font-size: $h1-size; }
+h2 { font-size: $h2-size; }
+h3 { font-size: $h3-size; }
+h4 { font-size: $h4-size; }
+h5 { font-size: $h5-size; }
+h6 { font-size: $h6-size; }
+
+h1 , h2, h3, h4, h5, h6
+    margin-top 0
+    margin-bottom 0
+    font-weight $font-weight-bold
+
 p
     margin-top 0
     margin-bottom 10px
 
-small
-    font-size 90%
+small { font-size: 90%; }
 
-blockquote
-    margin 0
+blockquote { margin: 0; }
 
 ul, ol
     padding-left 0
     margin-top 0
     margin-bottom 0
 
-ol ol, ul ol
-    list-style-type lower-roman
+ol ol, ul ol { list-style-type: lower-roman; }
 
 ul ul ol,
 ul ol ol,
@@ -22,11 +31,9 @@ ol ul ol,
 ol ol ol
     list-style-type lower-alpha
 
-dd
-    margin-left 0
+dd { margin-left: 0; }
 
-tt,
-code
+tt, code
     font-family $mono-font
     font-size $font-size-small
 

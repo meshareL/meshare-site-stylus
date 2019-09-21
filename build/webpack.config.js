@@ -15,15 +15,10 @@ module.exports = {
             {
                 test: /\.styl$/,
                 use: [
-                    {
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            publicPath: path.join(__dirname, '../dist')
-                        }
-                    },
-                    {loader: 'css-loader'},
-                    {loader: 'postcss-loader'},
-                    {loader: 'stylus-loader'}
+                    {loader: MiniCssExtractPlugin.loader},
+                    {loader: 'css-loader', options: {sourceMap: true}},
+                    {loader: 'postcss-loader', options: {sourceMap: true}},
+                    {loader: 'stylus-loader', options: {sourceMap: true}}
                 ]
             }
         ]
@@ -50,8 +45,5 @@ module.exports = {
             },
             canPrint: true              //是否将插件信息打印到控制台
         })
-    ],
-    optimization: {
-        minimize: true
-    }
+    ]
 };

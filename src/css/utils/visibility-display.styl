@@ -60,3 +60,22 @@ for $breakpoint, $variant in $responsive-variants
 .opacity75 { opacity: .75 !important }
 
 .no-outline { outline: none !important }
+
+
+@keyframes hover-appear
+    from
+        opacity 0
+    to
+        opacity 1
+
+.hover-visible
+    .hover-visible-target
+        visibility hidden
+        opacity 0
+    &:hover .hover-visible-target
+        visibility visible
+        animation-name hover-appear
+        animation-duration .1s
+        animation-delay .4s
+        animation-timing-function ease-in
+        animation-fill-mode forwards

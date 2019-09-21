@@ -1,11 +1,5 @@
-:root
-    --breakpoint-xs $width-xs
-    --breakpoint-sm $width-sm
-    --breakpoint-md $width-md
-    --breakpoint-lg $width-lg
-    --breakpoint-xl $width-xl
-    --font-family-sans-serif $body-font
-    --font-family-monospace $mono-font
+
+* { box-sizing: border-box; }
 
 body
     font-family $body-font
@@ -16,45 +10,52 @@ body
     color $text-gray-dark
     background-color $bg-white
 
-*
-    box-sizing border-box
-
-h1, h2, h3, h4, h5, h6
-    margin-top 0
-    margin-bottom 0
-
 a
     color $text-blue
     text-decoration none
     &:hover
         text-decoration underline
 
+b, strong { font-weight: $font-weight-bold; }
+
+button { border-radius: 0; }
+
 input, textarea, select, button
     font-size inherit
     font-family inherit
     line-height inherit
 
-button
-    cursor pointer
-    border-radius 0
-
-b, strong
-    font-weight $font-weight-bold
+// 删除取消键
+[type="search"]::-webkit-search-cancel-button
+    appearance none
 
 table
     border-spacing 0
     border-collapse collapse
 
-th, th
-    padding 0
+th, th { padding: 0; }
 
-[hidden][hidden]
-    display none
+[hidden][hidden] { display: none; }
 
 details
-    &:not([open]) > :not(summary)
-        display none
-    summary
-        cursor pointer
-        &:focus
-            outline none
+    summary { cursor: pointer; }
+    &:not([open]) > *:not(summary) { display: none; }
+
+details-menu
+details-dialog
+auto-check
+image-crop
+    display block
+
+/*
+ * https://stackoverflow.com/questions/31402576/enable-focus-only-on-keyboard-use-or-tab-press facebook
+ * 使用javaScript监听keydown与mousedown
+ * 触发mousedown事件时body添加.using-mouse取消元素outline效果
+ * 触发keydown事件时body删除.using-mouse使用浏览器原生outline效果
+ */
+body.using-mouse
+    summary:focus
+    button:focus
+    [class *= 'btn']:focus
+        outline none
+        box-shadow none

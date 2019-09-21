@@ -16,3 +16,37 @@
         box-shadow: 0 0 10px rgba($bg-green, .7)
         transition width .4s ease 0s
 
+/* HTML5 Progress 标签
+.progress-green
+    -moz-orient inline
+    display block
+    border none         // 进度条边框
+    border-radius 0     // edge浏览器
+    height 3px
+    width 100%
+    color green
+    background-color #ffffff        // 所有浏览器进度条背景颜色
+    -webkit-appearance none
+    &::-moz-progress-bar
+        background-color green
+    &::-webkit-progress-inner-element
+        height @height
+    &::-webkit-progress-bar
+        background-color transparent // 使webkit私有伪元素背景颜色透明使用父类背景颜色
+    &::-webkit-progress-value
+        background-color green      // webkit已完成进度条颜色
+    &::-ms-fill         // edge定义进度条样式
+        visibility visible
+        display inline-block
+        margin 0
+        padding 0
+        border none
+        border-radius 0
+        height @height
+        background-color @color      // 已完成进度条颜色或在父类设置color
+        animation -ms-bar
+        opacity 1
+        cursor default
+        outline none
+    &:indeterminate
+        display none */

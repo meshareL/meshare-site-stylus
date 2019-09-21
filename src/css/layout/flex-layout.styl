@@ -18,6 +18,10 @@ $grid-column {
     margin-left auto
     margin-right auto
 
+// container高度 = 屏幕高度 - (header高度 + footer高度 + border宽度)
+.container-height
+    min-height calc(100vh - (60px + 60px + 1px))
+
 .row
     display flex
     flex-wrap wrap

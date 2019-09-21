@@ -1,0 +1,69 @@
+
+image-crop
+.image-crop
+    .nesw
+        cursor nesw-resize
+    .nwse
+        cursor nwse-resize
+
+    .crop-wrapper
+        position relative
+        font-size 0
+
+    .crop-container
+        position absolute
+        top 0
+        z-index 1
+        overflow hidden
+        width 100%
+        height 100%
+        user-select none
+
+    .crop-box
+        position absolute
+        top 0
+        left 0
+        border 1px dashed white
+        box-sizing border-box
+        cursor move
+
+    .crop-outline
+        position absolute
+        top 0
+        right 0
+        bottom 0
+        left 0
+        outline 600px solid rgba(0, 0, 0, .3)
+
+    .handle
+        position absolute
+        display block
+        margin 0
+        padding 0
+        border none
+        outline none
+        appearance none
+        &::before
+            content ''
+            position absolute
+            display block
+            padding 4px
+            border 1px solid #767676
+            transform translate(-50%, -50%)
+            background-color $bg-white
+    .nw
+        left 0
+        top 0
+        cursor nwse-resize
+    .ne
+        top 0
+        right 0
+        cursor nesw-resize
+    .sw
+        bottom 0
+        left 0
+        cursor nesw-resize
+    .se
+        right 0
+        bottom 0
+        cursor nwse-resize

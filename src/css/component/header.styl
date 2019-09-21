@@ -17,14 +17,14 @@
 
     // header搜索框
     .nav-search
-        color $text-white
-        background-color rgba($bg-white, 0.125)
-        font-size $body-font-size
-        width 300px
-        min-height 30px
         padding-left $spacer-2
         border none
         border-radius $border-radius
+        width 300px
+        min-height 30px
+        font-size $body-font-size
+        color $text-white
+        background-color rgba($bg-white, 0.125)
         &:focus
             color $text-gray-dark
             background-color $bg-white
@@ -38,9 +38,9 @@
     .notification-dot
         position absolute
         top 0
-        right 5px
-        height $spacer-2
-        width $spacer-2
+        right 5.5px
+        width 10px
+        height 10px
         transform translate(100%, -50%)
-        background-color $red-300
         border-radius 50%
+        background-image linear-gradient($red-300, $red-500)

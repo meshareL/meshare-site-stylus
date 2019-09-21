@@ -1,20 +1,21 @@
+[class *= 'btn']:not([disabled]):not(.disabled)
+    cursor pointer
+
 .btn
     position relative
+    vertical-align middle
     display inline-block
     padding 6px 12px
+    border 1px solid transparentize($black, 0.8)
+    border-radius .25em
     font-size $body-font-size
     font-weight $font-weight-normal
     line-height 20px
     white-space nowrap
-    vertical-align middle
-    cursor pointer
-    user-select none
     background-repeat repeat-x
     background-position -1px -1px
     background-size 110% 110%
-    border 1px solid transparentize($black, 0.8)
-    border-radius .25em
-    appearance none
+    user-select none
     &:focus
         outline none
     &:hover
@@ -25,8 +26,8 @@
         background-image none
     &:disabled
     &.disabled
-        cursor default
         background-position 0 0
+        pointer-events none
     i
         font-style normal
         font-weight $font-weight-semibold
@@ -64,8 +65,8 @@
 
     &.btn-large
         padding $em-spacer-6 1.25em
-        font-size inherit
         border-radius 6px
+        font-size inherit
 
     &.btn-block
         display block
@@ -79,45 +80,43 @@
 .btn-link
     display inline-block
     padding 0
-    font-size inherit
-    color $text-blue
-    text-decoration none
-    white-space nowrap
-    cursor pointer
-    user-select none
-    background-color transparent
     border none
+    font-size inherit
+    white-space nowrap
+    color $text-blue
+    background-color transparent
+    text-decoration none
+    user-select none
     appearance none
     &:hover
         text-decoration underline
     &:disabled
-        &,
-        &:hover
+    &.disabled
+        &, &:hover
             color rgba($gray-600, 0.5)
-            cursor default
+            pointer-events none
 
 .btn-icon
     display inline-block
     padding 0
+    border none
     font-size inherit
-    color inherit
+    line-height 1
+    color currentColor
     text-decoration none
     white-space nowrap
-    user-select none
     background-color transparent
-    border none
-    appearance icon
-    cursor pointer
+    user-select none
+    appearance none
     &:focus
         outline none
     &:hover
         text-decoration none
     &:disabled
+    &.disabled
         &, &:hover
             color rgba($gray-600, 0.5)
-            cursor default
-    .octicon
-        vertical-align middle
+            pointer-events none
 
 .hidden-text-expander
     display block
@@ -130,38 +129,38 @@
 
 .hidden-text-expander a,
 .ellipsis-expander
+    vertical-align middle
     display inline-block
-    height 12px
     padding 0 5px 5px
+    border none
+    border-radius 1px
+    height 12px
     font-size $font-size-small
     font-weight $font-weight-bold
     line-height 6px
     color $gray-700
-    text-decoration none
-    vertical-align middle
     background lighten($gray-300, 5%)
-    border 0
-    border-radius 1px
+    text-decoration none
     &:hover
-        text-decoration none
         background-color darken($gray-300, 4%)
+        text-decoration none
     &:active
         color $text-white
         background-color $blue-400
 
 .social-count
     float left
+    vertical-align middle
     padding 3px 10px
+    border 1px solid transparentize($black, 0.8)
+    border-left none
+    border-top-right-radius 3px
+    border-bottom-right-radius 3px
     font-size $font-size-small
     font-weight $font-weight-bold
     line-height 20px
     color $text-gray-dark
-    vertical-align middle
     background-color $bg-white
-    border 1px solid transparentize($black, 0.8)
-    border-left 0
-    border-top-right-radius 3px
-    border-bottom-right-radius 3px
     &:hover,
     &:active
         text-decoration none

@@ -1,0 +1,58 @@
+// .message
+
+.message
+    position fixed
+    top 20px
+    left 50%
+    padding $spacer-3
+    border $border-width $border-style $border-black-fade
+    border-radius $border-radius
+    overflow hidden
+    transform translateX(-50%)
+    min-width 380px
+    font-size $body-font-size
+    color $blue-800
+    background-color $blue-100
+    transition opacity .3s, transform .4s
+
+    // alert themes
+    &.message-info
+        color $blue-800
+        background-color $blue-100
+        border-color $border-black-fade
+
+    &.message-warn
+        color $yellow-900
+        background-color $yellow-100
+        border-color $black-fade-15
+
+    &.message-error
+        color $red-900
+        background-color $red-100
+        border-color $black-fade-15
+
+    &.message-success
+        color $green-800
+        background-color $green-100
+        border-color $black-fade-15
+
+    // Close button
+    .message-close
+        float right
+        padding $spacer-3
+        margin -($spacer-3)
+        color inherit
+        text-align center
+        cursor pointer
+        // Undo `<button>` styles
+        border none
+        background none
+        appearance none
+        opacity .6
+        &:hover { opacity: 1 }
+
+
+.vue-message-fade-enter
+.vue-message-fade-leave-active
+    opacity 0
+    transform translate(-50%, -100%)

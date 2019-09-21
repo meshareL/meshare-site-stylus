@@ -1,0 +1,69 @@
+/*
+ * HTML元素模拟dialog
+ *
+ * <div>
+ *   <div class="dialog dialog-fade-in" role="dialog" aria-modal="true">
+ *     <div class="dialog-header">
+ *       <h4>Dialog Title</h4>
+ *       <button class=dialog-close>Close Button</button>
+ *     </div>
+ *   </div>
+ *   <div class="backdrop" role="none"></div>
+ * </div>
+ */
+
+.dialog
+    position fixed
+    top 0
+    left 50%
+    transform translateX(-50%)
+    z-index 999
+    display none
+    border $border
+    border-radius $border-radius
+    background-color $bg-white
+    background-clip padding-box
+    box-shadow 0 0 18px rgba($black, .4)
+
+    ~ .backdrop
+        display none
+
+    &.dialog-fade-in
+        display block
+        animation-name fade-in
+        animation-duration 300ms
+        animation-timing-function ease-in-out
+        ~ .backdrop
+            position fixed
+            top 0
+            right 0
+            bottom 0
+            left 0
+            z-index 998
+            display block
+            background-color rgba(black, .7)
+
+    .dialog-header
+        display flex
+        flex-direction row
+        align-items center
+        justify-content space-between
+        padding $spacer-3
+        border-bottom $border
+        border-top-left-radius $border-radius
+        border-top-right-radius $border-radius
+        font-weight $font-weight-bold
+        color $text-gray-dark
+        background-color $bg-gray
+
+        .dialog-close
+            padding $spacer-3
+            margin -($spacer-3)
+            border none
+            color $text-gray
+            background transparent
+            cursor pointer
+            &:focus
+                outline none
+            &:hover
+                color $text-blue

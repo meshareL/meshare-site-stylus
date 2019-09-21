@@ -27,11 +27,10 @@
         display block
 
     // 表单项是否必须
-    &.required
-        label::after
-            padding-left 5px
-            color $text-red
-            content '*'
+    &.required label::after
+        content '*'
+        padding-left 5px
+        color $text-red
 
     // 表单验证,错误信息
     &.erring
@@ -40,14 +39,14 @@
             position relative
             z-index 10
             display table
-            max-width 450px // Keep our long errors readable
-            padding 5px $spacer-2
             margin 6px 0 0 0
-            font-size 13px
-            font-weight $font-weight-normal
+            padding 5px $spacer-2
             border-width $border-width
             border-style $border-style
             border-radius $border-radius
+            max-width 450px // Keep our long errors readable
+            font-size 13px
+            font-weight $font-weight-normal
             &::before
             &::after
                 content ' '
@@ -80,3 +79,13 @@
                 border-bottom-color $border-yellow
             &::after
                 border-bottom-color $yellow-100
+
+.note
+    margin $spacer-1 0 2px
+    min-height 17px
+    font-size $font-size-small
+    color $text-gray
+
+    .spinner
+        margin-right 3px
+        vertical-align middle

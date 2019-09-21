@@ -1,17 +1,14 @@
 .box
-    background-color $white
     border $border-width $border-style $border-gray-dark
     border-radius $border-radius
+    background-color $bg-white
 
     .box-header
         padding $spacer-3
-        margin -($border-width) -($border-width) 0
-        background-color $bg-gray
-        border-color $border-gray-dark
-        border-style $border-style
-        border-width $border-width
+        border-bottom $border-width $border-style $border-gray-dark
         border-top-left-radius $border-radius
         border-top-right-radius $border-radius
+        background-color $bg-gray
 
     .box-title
         font-size $body-font-size
@@ -20,33 +17,25 @@
     .box-body
         padding $spacer-3
         border-bottom $border-width $border-style $border-gray
-        // Ensures bottom-border doesn't poke out when .Box-body used without box-footer
+        // .box-body 作为最后一个元素时,删除 border-bottom,防止双边框
         &:last-of-type
-            margin-bottom -($border-width)
-            border-bottom-right-radius 2px
-            border-bottom-left-radius 2px
+            border-bottom none
+            border-bottom-right-radius $border-radius
+            border-bottom-left-radius $border-radius
 
     .box-footer
         padding $spacer-3
-        margin-top -1px // prevents double border when used with .Box-body
-        border-top $border-width $border-style $border-gray
+        border-bottom-right-radius $border-radius
+        border-bottom-left-radius $border-radius
 
-    // Box rows
     .box-row
         padding $spacer-3
-        margin-top -1px
-        list-style-type none // To account for applying Box component to a list
-        border-top $border-width $border-style $border-gray
+        border-bottom $border-width $border-style $border-gray
+        list-style none
         &:first-child
-            border-top-color transparent
-            border-top-left-radius 2px
-            border-top-right-radius 2px
+            border-top-left-radius $border-radius
+            border-top-right-radius $border-radius
         &:last-child
-            border-bottom-right-radius 2px
-            border-bottom-left-radius 2px
-        // Adds a blue vertical line to the left of the row
-        // For indicating a row item is unread
-        &.box-row-unread,
-        // .unread to be deprecated with .Box-row-unread
-        &.unread
-            box-shadow 2px 0 0 $blue inset
+            border-bottom none
+            border-bottom-left-radius $border-radius
+            border-bottom-right-radius $border-radius

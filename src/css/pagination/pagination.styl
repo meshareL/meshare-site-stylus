@@ -1,65 +1,67 @@
 // 分页
 
+$page-item
+    padding 7px 12px
+    border $border
+    border-right none
+    font-style normal
+    font-weight $font-weight-bold
+    color $text-blue
+    background-color $bg-white
+    white-space nowrap
+    cursor pointer
+    user-select none
+
+$page-gap
+    color $gray-300
+    background-color $bg-gray-light
+    cursor default
+
 .pagination-container
     font-size 13px
 
-    .pagination
-        display flex
-        flex-direction row
-        align-items center
-        justify-content center
-        padding 0
-        margin 15px 0
-        list-style none
+.pagination
+    display flex
+    flex-direction row
+    align-items center
+    justify-content center
+    padding 0
+    margin 15px 0
+    list-style none
 
-        .page-item
-            padding 7px 12px
-            font-weight $font-weight-bold
-            font-style normal
-            line-height $lh-default
-            white-space nowrap
-            user-select none
-            color $text-blue
-            background-color $bg-white
-            border $border
-            border-right none
-            cursor pointer
+    .page-item
+        @extends $page-item !optional
 
-            &:focus
-            &:hover
-                z-index 2
-                outline none
-                text-decoration none
-                background-color darken($gray-100, 2%)
-                border-color $border-gray
+        &:focus
+        &:hover
+            z-index 2
+            outline none
+            text-decoration none
+            background-color darken($gray-100, 2%)
 
-            &:first-child
-                border-top-left-radius $border-radius
-                border-bottom-left-radius $border-radius
-            &:last-child
-                border-top-right-radius $border-radius
-                border-bottom-right-radius $border-radius
-                border-right @border
-            &.disabled
-                color $gray-300
-                background-color $bg-gray-light
-                pointer-events none
-                cursor auto
-
-            &.selected
-            &.selected:hover
-            &[aria-current=true]
-            &[aria-current=true]:hover
-                z-index 3
-                color $text-white
-                background-color $bg-blue
-                border-color $border-blue
-
-        .page-gap
-        .page-gap:hover
-            padding 7px 12px
+        &:first-child
+            border-top-left-radius $border-radius
+            border-bottom-left-radius $border-radius
+        &:last-child
+            border-top-right-radius $border-radius
+            border-bottom-right-radius $border-radius
+            border-right $border
+        &.disabled
             color $gray-300
             background-color $bg-gray-light
-            border $border
-            border-right none
-            cursor default
+            pointer-events none
+
+        &.selected
+        &.selected:hover
+            z-index 3
+            color $text-white
+            background-color $bg-blue
+            border-color @background-color
+
+    .page-gap
+        @extends $page-item !optional, $page-gap !optional
+        pointer-events none
+        &:focus
+            outline none
+        &:hover
+            @extends $page-gap !optional

@@ -13,6 +13,7 @@
 
 // 自动隐藏内容
 .details-overlay[open] > summary::before
+    content ' '
     position: fixed
     top 0
     right 0
@@ -21,9 +22,54 @@
     z-index 80
     display block
     cursor default
-    content " "
     background transparent
 
 .details-overlay-dark[open] > summary::before
-    z-index 99
     background $black-fade-50
+
+// details状态
+/*
+ * <details class="details-reset">
+ *   <summary>
+ *     <svg class="details-open octicon octicon-chevron-down">...</svg>
+ *     <svg class="details-closed octicon octicon-chevron-right">...</svg>
+ *   </summary>
+ * </details>
+ */
+details
+    &:not([open]) > summary .details-open
+        display none
+    &[open] > summary .details-closed
+        display none
+
+/*
+ * <details class="details-reset">
+ *   <summary>
+ *     <svg class="details-status octicon octicon-chevron-up">...</svg>
+ *   </summary>
+ *
+ * </details>
+ */
+details
+    > summary .details-status
+        transition transform .3s ease-in
+    // details标签关闭状态
+    &:not([open]) > summary .details-status
+        &.octicon-chevron-up
+            transform rotate(90deg)
+        &.octicon-chevron-right
+            transform rotate(0)
+        &.octicon-chevron-down
+            transform rotate(-90deg)
+        &.octicon-chevron-left
+            transform rotate(180deg)
+    // details标签打开状态
+    &[open] > summary .details-status
+        &.octicon-chevron-up
+            transform rotate(180deg)
+        &.octicon-chevron-right
+            transform rotate(90deg)
+        &.octicon-chevron-down
+            transform rotate(0)
+        &.octicon-chevron-left
+            transform rotate(270deg)

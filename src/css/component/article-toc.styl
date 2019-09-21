@@ -1,56 +1,94 @@
 // 文章目录
 .article-toc
-    font-size $body-font-size
+    z-index 2
     padding-left 10px
     border-left $border
-    z-index 2
+    font-size $body-font-size
+
     .toc-title
+        font-size $h4-size
         font-weight $font-weight-bold
         letter-spacing 2px
-    .toc-list
+
+    ul, ol
         list-style none
-        .sub-list
-            list-style none
-        .toc-item
+
+    .toc-item
+        position relative
+        a
             position relative
-            a
-                position relative
-                width 100%
-                padding $spacer-1 0 $spacer-1 20px
-                color $text-gray-dark
-                font-weight $font-weight-normal
-                display block
-                text-decoration none
-                overflow hidden
-                text-overflow ellipsis
-                white-space nowrap
-                &:before
-                    content ''
-                    position absolute
-                    top 50%
-                    left 3%
-                    margin-top -2px
-                    border 2px $border-style currentColor
-                    border-radius 50%
-                &:hover
-                    border-radius $border-radius
-                    background-color $bg-gray
-                    text-decoration none
-            &.g1
-                a
-                    font-weight $font-weight-bold
-            &.g2
-                a
-                    font-weight $font-weight-normal
-                    padding-left 35px
-                    &:before
-                        left 8%
-            &.g3
-                a
-                    padding-left 50px
-                    &:before
-                        left 14%
-            .active
-                color $blue-400
-                background-color $bg-gray
+            display block
+            padding $spacer-1 0
+            color $text-gray-dark
+            font-weight $font-weight-normal
+            text-decoration none
+            overflow hidden
+            text-overflow ellipsis
+            white-space nowrap
+            &::before
+                content ''
+                position absolute
+                top 50%
+                margin-top -2px
+                border 2px $border-style currentColor
+                border-radius 50%
+            &:hover
                 border-radius $border-radius
+                background-color $bg-gray
+                text-decoration none
+
+        for $i in range(1, 6, 1)
+            &.g{$i}
+                a
+                    padding-left 20px + ($i - 1) * 14
+                    if $i == 1
+                        font-weight $font-weight-bold
+                    else
+                        font-weight $font-weight-normal
+                    &::before
+                        left 6px + ($i - 1) * 14
+
+        .active
+            color $blue-400
+            background-color $bg-gray
+            border-radius $border-radius
+
+
+
+
+/* &.g1
+    a
+        padding-left 20px
+        font-weight $font-weight-bold
+        &::before
+            left 6px
+&.g2
+    a
+        padding-left 34px
+        font-weight $font-weight-normal
+        &::before
+            left 20px
+&.g3
+    a
+        padding-left 48px
+        font-weight $font-weight-normal
+        &::before
+            left 34px
+&.g4
+    a
+        padding-left 62px
+        font-weight $font-weight-normal
+        &::before
+            left 48px
+&.g5
+    a
+        padding-left 76px
+        font-weight $font-weight-normal
+        &::before
+            left 62px
+&.g6
+    a
+        padding-left 90px
+        font-weight $font-weight-normal
+        &::before
+            left 76px */

@@ -1,40 +1,16 @@
 // alert
 
 .flash
-    position fixed
-    top 20px
-    left 50%
-    min-width 380px
+    position relative
     padding $spacer-3
-    font-size $body-font-size
     color $blue-800
     background-color $blue-100
-    border $border-width $border-style $border-black-fade
-    border-radius $border-radius
-    overflow hidden
-    transform translateX(-50%)
-    transition opacity .3s, transform .4s
+    border 1px solid $border-black-fade
+    border-radius 3px
 
-    // alert themes
-    &.flash-info
-        color $blue-800
-        background-color $blue-100
-        border-color $border-black-fade
+    p:last-child { margin-bottom: 0; }
 
-    &.flash-warn
-        color $yellow-900
-        background-color $yellow-100
-        border-color $black-fade-15
-
-    &.flash-error
-        color $red-900;
-        background-color $red-100
-        border-color $black-fade-15
-
-    &.flash-success
-        color $green-800
-        background-color $green-100
-        border-color $black-fade-15
+    .flash-messages { margin-bottom: $spacer-4; }
 
     // Close button
     .flash-close
@@ -45,15 +21,35 @@
         text-align center
         cursor pointer
         // Undo `<button>` styles
-        background none
         border none
+        background none
         appearance none
         opacity .6
-        &:focus { outline: none }
-        &:hover { opacity: 1 }
+        &:hover { opacity: 1; }
 
+    // Action button
+    .flash-action
+        float right
+        margin-top -3px
+        margin-left $spacer-4
 
-.vue-flash-fade-enter
-.vue-flash-fade-leave-active
-    opacity 0
-    transform translate(-50%, -100%)
+    // Variations
+    .flash-warn
+        color $yellow-900
+        background-color $yellow-100
+        border-color $black-fade-15
+
+    .flash-error
+        color $red-900
+        background-color $red-100
+        border-color $black-fade-15
+
+    .flash-success
+        color $green-800
+        background-color $green-100
+        border-color $black-fade-15
+
+    .flash-full
+        margin-top -1px
+        border-width 1px 0
+        border-radius 0
