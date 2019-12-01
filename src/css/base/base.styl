@@ -45,17 +45,27 @@ details-menu
 details-dialog
 auto-check
 image-crop
+g-tooltip
+g-dialog
+g-flash
+mention-button
+carousel-container
+carousel-item
     display block
 
 /*
- * https://stackoverflow.com/questions/31402576/enable-focus-only-on-keyboard-use-or-tab-press facebook
+ * https://stackoverflow.com/questions/31402576/enable-focus-only-on-keyboard-use-or-tab-press
  * 使用javaScript监听keydown与mousedown
  * 触发mousedown事件时body添加.using-mouse取消元素outline效果
  * 触发keydown事件时body删除.using-mouse使用浏览器原生outline效果
  */
 body.using-mouse
-    summary:focus
-    button:focus
-    [class *= 'btn']:focus
-        outline none
-        box-shadow none
+    summary
+    button
+    [role='button']
+    [type='button']
+    [type='submit']
+    [type='reset']
+        &:focus
+            outline none
+            box-shadow none

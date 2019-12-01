@@ -16,6 +16,7 @@
         opacity 0
         pointer-events none
 
+    // 提示工具提示框
     &::before
         content attr(aria-label) ''
         padding $em-spacer-5 $em-spacer-6
@@ -32,20 +33,21 @@
         white-space pre
         background-color $tooltip-background-color
 
+    // 提示工具箭头
     &::after
         content ''
         border 6px $border-style transparent
 
     &:hover
+    &:focus
         &::before
         &::after
             display inline-block
-            text-decoration none
             animation-name tooltip-appear
             animation-duration $tooltip-duration
-            animation-fill-mode forwards
             animation-timing-function ease-in
             animation-delay $tooltip-delay
+            animation-fill-mode forwards
 
     &.tooltip-top
         &::before
@@ -97,3 +99,22 @@
             margin-top -6px
             border-left-color $tooltip-background-color
 
+/*
+ * 多行工具提示
+ *
+ * 当你有很长的内容时,添加这个类.
+ * 不能用换行来预先格式化文本
+ * 总是"$tooltip-max-width"宽.
+ */
+.tooltip-multiline
+    &::before
+        width max-content
+        max-width $tooltip-max-width
+        white-space pre-line
+
+/*
+@media screen and (min-width: (0\0)) {
+    // IE11
+    .tooltip-multiline::before { width: $tooltip-max-width; }
+}
+*/

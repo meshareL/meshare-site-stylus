@@ -1,0 +1,83 @@
+/*
+ * <div class="select-menu" role="menu">
+ *     <div class="select-menu-header">
+ *         <span class="select-menu-title">Title</span>
+ *         <button class="select-menu-close-btn" type="button">x</button>
+ *     </div>
+ *     <div class="select-menu-list">
+ *         <span class="select-menu-item" role="menuitem">One</span>
+ *         <span class="select-menu-item" role="menuitem">Two</span>
+ *         <span class="select-menu-item" role="menuitem">Three</span>
+ *     </div>
+ * </div>
+ */
+.dropdown .select-menu
+    position absolute
+    top 100%
+    left 0
+    z-index $zindex-subject
+    padding 0
+    margin $spacer-1 0 0 0
+    border $border-width $border-style $black-fade-15
+    border-radius 4px
+    color $text-gray
+    background-color $bg-white
+    background-clip padding-box
+    box-shadow 0 3px 12px $black-fade-15
+
+    &.select-menu-right
+        right 0
+        left auto
+
+    .select-menu-header
+        padding $spacer-2 10px
+        background-color $bg-gray
+        border-top-left-radius $border-radius
+        border-top-right-radius $border-radius
+
+        .select-menu-title
+            font-weight $font-weight-bold
+            color $text-gray-dark
+
+        // 下拉菜单关闭按钮
+        .select-menu-close-btn
+            display block
+            float right
+            padding 0
+            border none
+            color $gray-400
+            background transparent
+            cursor pointer
+            &:focus { outline: none; }
+            &:hover { color: $gray-700; }
+
+    .select-menu-list
+        position relative
+        overflow auto
+        margin 0
+        padding 0
+        border-top $border
+        list-style none
+        font-size 13px
+
+        .select-menu-item
+            display block
+            padding $spacer-2 $spacer-2 $spacer-2 30px
+            border none
+            border-bottom $border
+            width 100%
+            overflow hidden
+            text-overflow ellipsis
+            text-align left
+            color inherit
+            background-color $bg-white
+            cursor pointer
+
+            &:hover
+                color $text-white
+                background-color $bg-blue
+
+            &:last-child
+                border-bottom none
+                border-bottom-left-radius $border-radius
+                border-bottom-right-radius $border-radius

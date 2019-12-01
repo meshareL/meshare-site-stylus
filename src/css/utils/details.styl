@@ -8,18 +8,19 @@
     > summary::before { display: none; }
     // Remove marker added by Chrome
     > summary::-webkit-details-marker { display: none; }
-    // Remove marker added by firefox
+    // Remove marker added by Firefox
     > summary::-moz-list-bullet { font-size: 0; }
 
-// 自动隐藏内容
+// 添加一个覆盖全屏幕的伪元素,点击该伪元素可以关闭details元素
+// details元素展示内容的z-index值应该大于该伪元素z-index值
 .details-overlay[open] > summary::before
-    content ' '
+    content ''
     position: fixed
     top 0
     right 0
     bottom 0
     left 0
-    z-index 80
+    z-index $zindex-backdrop
     display block
     cursor default
     background transparent

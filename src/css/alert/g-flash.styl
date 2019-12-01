@@ -1,0 +1,56 @@
+@keyframes g-flash-appear {
+    from { top: -60px }
+    to { top: 0 }
+}
+
+g-flash
+    position fixed
+    top 0
+    padding $spacer-3
+    border 1px solid transparent
+    border-right none
+    border-left none
+    width 100%
+    min-height 60px
+    animation-name g-flash-appear
+    animation-duration .3s
+    animation-timing-function ease-in
+
+    &[type='info']
+    &[type='primary']
+        border-color $border-black-fade
+        color $blue-800
+        background-color $blue-100
+
+    &[type='success']
+        border-color $black-fade-15
+        color $green-800
+        background-color $green-100
+
+    &[type='warn']
+        border-color $black-fade-15
+        color $yellow-900
+        background-color $yellow-100
+
+    &[type='error']
+        border-color $black-fade-15
+        color $red-900
+        background-color $red-100
+
+    .container
+        display flex
+        align-items center
+        justify-content space-between
+        color inherit
+
+    .flash-close
+        padding $spacer-3
+        margin -($spacer-3)
+        color inherit
+        cursor pointer
+        // Undo `<button>` styles
+        border none
+        background none
+        appearance none
+        opacity .6
+        &:hover { opacity: 1; }

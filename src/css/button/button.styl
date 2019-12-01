@@ -1,5 +1,10 @@
-[class *= 'btn']:not([disabled]):not(.disabled)
-    cursor pointer
+button
+[role='button']
+[type='button']
+[type='submit']
+[type='reset']
+    &:not([disabled]):not(.disabled):not([data-normal-cursor])
+        cursor pointer
 
 .btn
     position relative
@@ -108,8 +113,6 @@
     background-color transparent
     user-select none
     appearance none
-    &:focus
-        outline none
     &:hover
         text-decoration none
     &:disabled

@@ -1,0 +1,58 @@
+
+@keyframes carousel-control-appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+carousel-container
+    position relative
+    overflow hidden
+    width 100%
+
+carousel-item
+    position relative
+    float left
+    display none
+    margin-right -100%
+    width 100%
+    backface-visibility hidden
+    transition transform .6s ease-in-out
+
+carousel-item
+    &.active
+    &.prev
+    &.next
+        display block
+
+    &.prev:not(.right)
+    &.active.left
+        transform translateX(-100%)
+
+    &.next:not(.left)
+    &.active.right
+        transform translateX(100%)
+
+.carousel-control
+    position absolute
+    top 0
+    bottom 0
+    padding 0
+    display none
+    border none
+    width 15%
+    background-color transparent
+    cursor pointer
+
+    &.prev { left: 0; }
+    &.next { right: 0; }
+
+    .octicon
+        fill #000000
+        opacity .6
+
+carousel-container:hover
+    .carousel-control
+        display inline-block
+        animation-name carousel-control-appear
+        animation-duration .4s
+        animation-timing-function ease-in

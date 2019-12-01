@@ -1,0 +1,29 @@
+/* 自定义元素g-dialog样式 */
+
+g-dialog
+    position fixed
+    top 0
+    left 50%
+    z-index $zindex-subject
+    transform translateX(-50%)
+    margin 10vh auto 0
+    max-width 90vw
+    max-height 80vh
+
+g-dialog
+    display none
+    &[open="true"]
+        display block
+    &[open="false"]
+        display none
+
+g-dialog + g-backdrop
+    position fixed
+    top 0
+    right 0
+    bottom 0
+    left 0
+    z-index $zindex-backdrop
+    display block
+    background-color $backdrop-color
+    cursor default

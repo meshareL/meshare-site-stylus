@@ -1,0 +1,53 @@
+@keyframes spin {
+    0%, 15% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    overflow hidden
+    display flex
+    align-items center
+    justify-content center
+    flex-direction column
+    background rgba(black .7)
+
+    .loader-inner
+        position absolute
+        width 100px
+        height 50px
+
+    .loader-line-wrap
+        position absolute
+        top 0
+        left 0
+        overflow hidden
+        width 100px
+        height 50px
+        animation spin 2s cubic-bezier(.175, .885, .32, 1.275) infinite
+        transform-origin 50% 100%
+
+    .loader-line
+        position absolute
+        top 0
+        right 0
+        bottom 0
+        left 50%
+        border 4px solid transparent
+        border-radius 50%
+        width 100%
+        height 100px
+        transform translateX(-50%)
+
+    for $i in range(1, 5, 1)
+        .loader-line-wrap:nth-child({$i})
+            animation-delay -($i * 50)ms
+            .loader-line
+                top $i * 7px
+                border-color hsl(($i - 1) * 60 , 80%, 60%)
+                width (90 - ($i - 1) * 14)px
+                height @width

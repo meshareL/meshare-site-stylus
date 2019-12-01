@@ -1,30 +1,28 @@
 {
-  "name": "meshare-stylus",
+  "name": "meshare-style",
   "version": "1.0.0",
-  "description": "meshare CSS",
+  "description": "meshare.site style",
+  "private": true,
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config build/webpack.config.js",
+    "build": "node script/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "stylus",
+    "Stylus",
     "CSS"
   ],
-  "author": "",
+  "author": "meshare",
   "license": "MIT",
-  "dependencies": {
-    "webpack": "^4.40.2"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "autoprefixer": "^9.6.1",
-    "css-loader": "^3.2.0",
+    "@types/node": "^12.12.14",
+    "@types/stylus": "^0.48.31",
+    "autoprefixer": "^9.7.3",
     "cssnano": "^4.1.10",
-    "mini-css-extract-plugin": "^0.8.0",
-    "optimize-css-assets-webpack-plugin": "^5.0.3",
-    "postcss-loader": "^3.0.0",
-    "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2",
-    "webpack-cli": "^3.3.8"
+    "cssstats": "^3.4.0",
+    "gzip-size": "^5.1.1",
+    "postcss": "^7.0.23",
+    "stylus": "^0.54.7"
   }
 }

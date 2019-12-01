@@ -1,0 +1,28 @@
+/*
+ * <summary class="dropdown-caret"></summary>
+ *
+ * <summary>
+ *   <span class="dropdown-caret"></span>
+ * </summary>
+ */
+.dropdown
+    position relative
+    // 两种方式生成一个插入符号,小三角
+    > summary
+        // summary元素before伪元素用于生成全屏背景层
+        &.dropdown-caret::after
+            content ''
+            display inline-block
+            vertical-align -2px
+            margin-left $spacer-1
+            border 4px solid transparent
+            border-top-color currentColor
+            width 0
+            height 0
+
+        .dropdown-caret
+            content ''
+            display inline-block
+            vertical-align middle
+            border 4px $border-style transparent
+            border-top-color unset

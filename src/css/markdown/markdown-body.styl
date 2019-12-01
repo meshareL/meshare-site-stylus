@@ -13,7 +13,7 @@
     &::after
         content ''
         display table
-        clear botn
+        clear both
 
     > *:first-child
         margin-top 0 !important
@@ -68,3 +68,12 @@
         line-height 10px
         color $gray-700
         background-color $gray-000
+
+
+.markdown-body
+    &.markdown-body-condensed
+        pre { max-height: 150px; }
+    &.markdown-body-condensed-ultra
+        pre
+            padding 0
+            max-height 150px

@@ -1,10 +1,22 @@
 // 下拉菜单 <details>
 
-$dropdown-content-wrap
+/*
+ * details-reset删除details自带样式
+ * aria-haspopup=true表示点击时会出现菜单或浮动元素
+ * 下拉状态为打开状态时aria-expanded同步更改为true
+ *
+ * <div class="dropdown-menu dropdown-menu-right dropdown-menu-caret">
+ *     <a class="dropdown-item" href="#">One</a>
+ *     <a class="dropdown-item" href="#">Two</a>
+ *     <a class="dropdown-item" href="#">Three</a>
+ * </div>
+ */
+.dropdown .dropdown-menu
     position absolute
     top 100%
     left 0
-    z-index 100
+    z-index $zindex-subject
+    padding 5px 0
     margin $spacer-1 0 0 0
     border $border-width $border-style $black-fade-15
     border-radius 4px
@@ -13,170 +25,55 @@ $dropdown-content-wrap
     background-clip padding-box
     box-shadow 0 3px 12px $black-fade-15
 
-/*
- * details-reset删除details自带样式
- * aria-haspopup=true表示点击时会出现菜单或浮动元素
- * 下拉状态为打开状态时aria-expanded同步更改为true
- *
- * <details class="details-reset dropdown">
- *    <summary class="btn dropodown-toggle" aria-haspopup="menu" aria-expanded="false">dropdown button</summary>
- *    or
- *    <summary class="btn" aria-haspopup="true" aria-expanded="false">
- *        dropdown button
- *        </span class="dropdown-caret dropdown-caret-bottom"></span>
- *    </summary>
- *    <div class="dropdown-menu dropdown-menu-right dropdown-menu-caret">
- *        <a class="dropdown-item" href="#">One</a>
- *        <a class="dropdown-item" href="#">Two</a>
- *        <a class="dropdown-item" href="#">Three</a>
- *    </div>
- * </details>
- *
- * <details class="details-reset dropdown">
- *     <summary class="btn dropdown-toggle" aria-haspopup="menu" aria-expanded="false">dropdown button</summary>
- *     <div class="dropdown-modal" role="menu">
- *         <div class="dropdown-modal-header">
- *             header <button class="modal-close-btn" type="button">x</button>
- *         </div>
- *         <div class="dropdown-modal-body">
- *             <span class="dropdown-modal-item" role="menuitem">One</span>
- *             <span class="dropdown-modal-item" role="menuitem">Two</span>
- *             <span class="dropdown-modal-item" role="menuitem">Three</span>
- *         </div>
- *     </div>
- * </details>
- */
-.dropdown
-    position relative
-    // 两种方式生成一个插入符号,小三角
-    > summary
-        &.dropdown-toggle::after
+    // 菜单对齐
+    // 默认情况下,下拉菜单会自动从父菜单顶部100%和左侧对齐
+    // 添加该类,使下拉菜单右对齐
+    &.dropdown-menu-right
+        right 0
+        left auto
+
+    // 生成下拉菜单插入符号,小三角
+    &.dropdown-menu-caret
+        margin-top $spacer-2
+        &::before
             content ''
-            display inline-block
-            vertical-align -2px
-            margin-left $spacer-1
-            border 4px solid transparent
-            border-top-color currentColor
-            width 0
-            height 0
-        .dropdown-caret
+            position absolute
+            top -16px
+            left 9px
+            border 8px $border-style transparent
+            border-bottom-color $black-fade-15
+        &::after
             content ''
-            display inline-block
-            vertical-align middle
-            border 4px $border-style transparent
-            border-top-color initial
+            position absolute
+            top -14px
+            left 9px
+            border 8px $border-style transparent
+            border-bottom-color $bg-white
 
-    // 下拉菜单
-    .dropdown-menu
-        @extends $dropdown-content-wrap !optional
-        padding 5px 0
-
-        // 生成下拉菜单插入符号,小三角
-        &.dropdown-menu-caret
-            margin-top $spacer-2
-            &::before
-                content ''
-                position absolute
-                top -16px
-                right 9px
-                border 8px $border-style transparent
-                border-bottom-color $black-fade-15
-            &::after
-                content ''
-                position absolute
-                top -14px
-                right 9px
-                border 8px $border-style transparent
-                border-bottom-color $bg-white
-
-        // 菜单对齐
-        // 默认情况下,下拉菜单会自动从父菜单顶部100%和左侧对齐
-        // 添加该类,使下拉菜单右对齐
         &.dropdown-menu-right
-            right 0
-            left auto
+            &::before, &::after
+                right 9px
+                left auto
 
-        // 下拉菜单选项
-        .dropdown-item
-            display block
-            overflow hidden
-            padding $spacer-1 $spacer-3
-            color $text-gray-dark
-            background-color $bg-white
-            white-space nowrap
-            text-overflow ellipsis
-            cursor pointer
-            &:hover
-                color $text-white
-                background-color $bg-blue
-                text-decoration none
+    // 下拉菜单选项
+    .dropdown-item
+        display block
+        overflow hidden
+        padding $spacer-1 $spacer-3
+        color $text-gray-dark
+        background-color $bg-white
+        white-space nowrap
+        text-overflow ellipsis
+        cursor pointer
+        &:hover
+            color $text-white
+            background-color $bg-blue
+            text-decoration none
 
-        // 下拉菜单分隔符,可以使用<hr>
-        .dropdown-divider
-            display block
-            height 1px
-            margin $spacer-2 1px
-            background-color $gray-200
-            border none
-
-
-    //
-    .select-menu
-        @extends $dropdown-content-wrap !optional
-        padding 0
-        &.dropdown-modal-right
-            @extend .dropdown .dropdown-menu-right !optional
-
-        .select-menu-header
-            padding $spacer-2 10px
-            background-color $bg-gray
-            border-bottom $border
-            border-top-left-radius $border-radius
-            border-top-right-radius $border-radius
-
-            .select-menu-title
-                font-weight $font-weight-bold
-                color $text-gray-dark
-
-            // 下拉菜单关闭按钮
-            .select-menu-close-btn
-                display block
-                float right
-                padding 0
-                border none
-                color $gray-400
-                background transparent
-                cursor pointer
-                &:focus
-                    outline none
-                &:hover
-                    color $gray-700
-
-        .select-menu-list
-            position relative
-            overflow auto
-            margin 0
-            padding 0
-            list-style none
-            font-size 13px
-            color $text-gray
-
-            .select-menu-item
-                display block
-                padding $spacer-2 $spacer-2 $spacer-2 30px
-                border none
-                border-bottom $border
-                width 100%
-                overflow hidden
-                text-overflow ellipsis
-                text-align left
-                color inherit
-                background-color $bg-white
-                cursor pointer
-                &:last-child
-                    border-bottom none
-                    border-bottom-left-radius $border-radius
-                    border-bottom-right-radius $border-radius
-                &:hover
-                    color $text-white
-                    background-color $bg-blue
+    // 下拉菜单分隔符,可以使用<hr>
+    .dropdown-divider
+        display block
+        height 1px
+        margin $spacer-2 1px
+        background-color $gray-200
+        border none

@@ -2,6 +2,7 @@
 
 // 背景颜色
 .bg-white           { background-color: $bg-white !important; }
+.bg-black           { background-color: $bg-black !important; }
 .bg-blue            { background-color: $bg-blue !important; }
 .bg-blue-light      { background-color: $bg-blue-light !important; }
 .bg-gray-dark       { background-color: $bg-gray-dark !important; }
@@ -30,6 +31,8 @@ for $hue, $shades in $hue-maps
     background-size 100% 200px !important
 
 // 文本颜色
+.text-white         { color: $text-white !important; }
+.text-black         { color: $text-black !important; }
 .text-blue          { color: $text-blue !important; }
 .text-red           { color: $text-red !important; }
 .text-gray          { color: $text-gray !important; }
@@ -41,7 +44,6 @@ for $hue, $shades in $hue-maps
 .text-orange-light  { color: $text-orange-light !important; }
 .text-purple        { color: $text-purple !important; }
 .text-pink          { color: $text-pink !important; }
-.text-white         { color: $text-white !important; }
 .text-inherit       { color: inherit !important; }
 
 // 链接颜色
@@ -57,18 +59,19 @@ for $hue, $shades in $hue-maps
     &:hover
         color $text-blue !important
 
-/* 设置链接鼠标悬停时颜色为$text-blue */
+// 设置链接鼠标悬停时颜色为$text-blue
 .link-hover-blue
     &:hover
         color $text-blue !important
 
-/* 设置链接颜色为$text-gray,鼠标悬停时颜色为$text-blue同时删除鼠标悬停时的下划线 */
+// 设置链接颜色为$text-gray,鼠标悬停时颜色为$text-blue同时删除鼠标悬停时的下划线
 .muted-link
     color $text-gray !important
     &:hover
         color $text-blue !important
         text-decoration none
 
+// 设置链接颜色为$text-gray-dark和鼠标悬停时颜色为$text-red
 .link-danger
     color $text-gray !important
     &:hover

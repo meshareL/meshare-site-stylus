@@ -1,0 +1,15 @@
+
+.form-group
+    &.is-loading, &.is-successful, &.is-errored
+        .form-control
+            padding-right 32px
+            background-size 16px 16px
+            background-repeat no-repeat
+
+    &.is-loading .form-control
+        background-image embedurl('../../assets/spinner.svg', 'utf8')
+    &.is-successful .form-control
+        background-image embedurl('../../assets/module/ajax/success.svg', 'utf8')
+        background-size 12px 16px
+    &.is-errored .form-control
+        background-image embedurl('../../assets/module/ajax/error.svg', 'utf8')
