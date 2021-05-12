@@ -22,7 +22,7 @@
     "cssnano": "^4.1.10",
     "cssstats": "^3.4.0",
     "gzip-size": "^5.1.1",
-    "postcss": "^7.0.23",
+    "postcss": "^8.2.10",
     "stylus": "^0.54.7"
   }
 }
